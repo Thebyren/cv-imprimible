@@ -1,6 +1,6 @@
 # Portafolio-CV simple y profesional
 
-## [miralo en produccion](https://hola.com)
+## [miralo en produccion 🚀](https://lighthearted-pithivier-f103e3.netlify.app/)
 ### Este proyecto es un portafolio-CV simple y profesional creado con Astro. Se caracteriza por:
 
   - Facilidad de uso: Puedes generar tu propio CV modificando un único archivo JSON.
