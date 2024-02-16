@@ -1,0 +1,39 @@
+---
+import Section from "components/section.astro";
+import { skills } from "@/cv.json";
+---
+
+<Section title="Skills">
+  <ul>
+    {
+      skills.map(({ name }) => {
+        return (
+          <li>
+            <span>{name}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+<style>
+  ul {
+    padding-inline: 20px;
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  li {
+    border-radius: 3px;
+    background: #ccd;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    user-select: none;
+    transition:all 0.3s ease;
+  }
+  li:hover {
+    background: #aad;
+  }
+</style>

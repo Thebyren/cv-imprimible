@@ -1,0 +1,1 @@
+export type SocialIcon = record<string, string|any>

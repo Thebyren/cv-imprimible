@@ -1,0 +1,94 @@
+---
+import Section from "components/section.astro";
+import { projects } from "@/cv.json";
+---
+
+<Section title="Projects">
+  <ul>
+    {
+      projects.map(
+        ({
+          name,
+          description,
+          startDate,
+          endDate,
+          highlights,
+          active,
+          url,
+        }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                  <a href={url} title={`ver el projecto ${name}`}>
+                    {name}
+                  </a>
+                  {
+                    <span class={active != true ? "false":"true"}>&bull;</span>
+                  }
+                  </h3>
+                  <p>{description}</p>
+                </header>
+                <footer>
+                    {highlights.map((highlight)=>{
+                      return <span>{highlight}</span>
+                    })}
+                  </footer>
+              </article>
+            </li>
+          );
+        },
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+
+ul{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  gap:1rem;
+  text-wrap: balance;
+}
+article{
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  gap: 16px;
+  display:flex;
+  flex-direction:column;
+  padding:16px;
+  height: 100%;
+  transition:all 0.3s ease;
+}
+article:hover{
+  background:#ccf;
+}
+header{
+  flex:1;
+}
+footer{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+footer span{
+  border-radius:6px;
+  background: #eee;
+  color:#333;
+  font-size:0.8rem;
+  font-weight:500;
+  padding:0.2rem 0.6rem;
+}
+h3 a{
+  color:#447;
+}
+.true{
+  color:green;
+}
+.false{
+  color:#999;
+}
+
+</style>

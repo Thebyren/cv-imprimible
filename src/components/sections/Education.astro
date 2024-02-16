@@ -1,0 +1,89 @@
+---
+import Section from "components/section.astro";
+import { education } from "@/cv.json";
+---
+
+<!-- "education": [{
+  "institution": "University",
+  "url": "https://institution.com/",
+  "area": "Software Development",
+  "studyType": "Bachelor",
+  "startDate": "2011-01-01",
+  "endDate": "2013-01-01",
+  "score": "4.0",
+  "courses": [
+    "DB1101 - Basic SQL"
+  ]
+}], -->
+<Section title="Education">
+  <ul>
+    {
+      education.map(
+        ({
+          institution,
+          url,
+          area,
+          studyType,
+          startDate,
+          endDate,
+          courses,
+        }) => {
+          const StartYear = new Date(startDate).getFullYear();
+          const EndYear =
+            endDate != null ? new Date(endDate).getFullYear() : "actualmente";
+          const Years = `${StartYear} - ${EndYear}`;
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3><a href={url} target="_blank" 
+                rel="nooponer noreferrer"
+                >{institution}</a></h3>
+                    <h4>{studyType}</h4>
+                  </div>
+                  <date>{Years}</date>
+                </header>
+                <footer />
+              </article>
+            </li>
+          );
+        },
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+  ul{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content: baseline;
+  }
+  
+  article{
+    min-width: 200px;
+    padding-inline: 20px;;
+  }
+  article a{
+    color:#333;
+    transition: all ease-out 0.4s;
+  }
+  article a:hover{
+    color: #888 ;
+  }
+  article h3{
+    font-weight: 400;
+    color:#444;
+  }
+  article h4{
+    font-weight: 500;
+    color:#455;
+  }
+  article date{
+    font-size: 0.9rem;
+  }
+  
+</style>

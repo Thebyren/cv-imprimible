@@ -1,0 +1,166 @@
+---
+import { basics } from "@/cv.json";
+import Mail from "@/icons/mail.astro";
+import Phone from "@/icons/phone.astro";
+import X from "@/icons/X.astro";
+import Linkedin from "@/icons/Linkedin.astro";
+import Github from "@/icons/Github.astro";
+import WorlMap from "@/icons/WorlMap.astro";
+import Section from "@/components/section.astro";
+import type { SocialIcon } from "@/types";
+const { name, label, image, location, profiles, phone, email } = basics;
+const { city, region } = location;
+const Linkedininfo = profiles.find(({network})=> network ==="Linkedin")
+
+const SOCIAL_ICONS: SocialIcon = {
+  Github,
+  Linkedin,
+  X,
+};
+
+const printInfo = [Linkedininfo?.url, email, phone, ].filter(Boolean).join("\n ")
+---
+
+<Section>
+  <div class="container">
+    <div class="info">
+      <h1>{name}</h1>
+      <h2>{label}</h2>
+      <span>
+        <p>
+          <WorlMap/>
+        </p>
+        {city}, {region}
+      </span>
+      <div class="print" style="white-space: pre-line">
+        <p>{printInfo}</p>
+      </div>
+      <footer class="non-print">
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              title={`Enviar un correo electronico a ${name} al correo ${email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a
+              href={`tel:+${phone}`}
+              title={`realizar una llamada a ${name} a su numero ${phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Phone />
+            </a>
+          )
+        }
+        {
+          profiles.map(({ network, username, url }) => {
+            const Icon_ = SOCIAL_ICONS[network];
+            return (
+              <a
+                href={url}
+                title={`Visitar el perfil de ${name} en ${network}`}
+                target="_blank"
+                rel="nooponer noreferrer"
+              >
+                <Icon_ />
+              </a>
+            );
+          })
+        }
+      </footer>
+    </div>
+    <figure>
+      <img src={image} alt={name} />
+    </figure>
+  </div>
+</Section>
+
+<style>
+  .info{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    padding-right:32px;
+  }
+  .container {
+    padding-inline:20px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    text-wrap: balance;
+    color: #446;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  span {
+    color: #557;
+    display:flex;
+    align-items:center;
+    gap:0.25rem;
+    font-size:0.85rem;
+    letter-spacing: -0.05rem;
+  }
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100px;
+    border-radius: 7px;
+    border: #aaf solid 3px;
+  }
+  footer {
+    display:flex;
+    gap:4px;
+    margin-top;8px;
+  }
+  footer a{
+    margin:4px;
+    color:#888;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid #999;
+    padding: 4px;
+    height:32px;
+    width:32px;
+    border-radius: 6px;
+    transition:all 0.3s ease;
+  }
+  footer a:hover{
+      background-color: #bcf;
+    }
+  .non-print{
+    display:flex;
+  }
+  .print{
+    display:none;
+    font-size:0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  @media print{
+    .non-print{
+      display:none;
+    }
+    .print{
+      display:flex;
+    }
+    img{
+      width: 120px;
+    }
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Section from "components/section.astro";
+import { work } from "@/cv.json";
+---
+
+<Section title="Experience">
+  <ul>
+    {
+      work.map(({ name, position, url, startDate, endDate, summary }) => {
+        const StartYear = new Date(startDate).getFullYear();
+        const EndYear =
+          endDate != null ? new Date(endDate).getFullYear() : "actualmente";
+        const Years = `${StartYear} - ${EndYear}`;
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h3>{name}</h3>
+                  <h4>{position}</h4>
+                  </div>
+                  <date>{Years}</date>
+              </header>
+              <footer>
+                <p>{summary},<a href={url} target="_blank">conocer mas.</a></p>
+              </footer>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+
+
+<style>
+  ul{
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+    padding-inline:20px;
+  }
+ 
+  article h3{
+    color:#333;
+  }
+  article h4{
+    color:#444;
+    font-weight: 400;
+  }
+  header{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  date{
+    color:#226;
+    font-size: 0.9rem;
+  }
+</style>

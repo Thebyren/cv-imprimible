@@ -1,0 +1,406 @@
+{
+  "basics": {
+    "name": "Byron Rene Pastor Flores",
+    "label": "Ingeniero en sistemas y frontend developer",
+    "image": "/profile.jpeg",
+    "email": "byronrena1@gmail.com",
+    "phone": "(502) 3681 5904",
+    "url": "https://thebyren.gt",
+    "summary": "hola soy byron rene pastor flores, trainer de programacion y un dedicado a la tecnologia y disenio de aplicaciones por linea de comando",
+    "location": {
+      "address": "barrio la federal 2-45 zona 3",
+      "postalCode": "22001",
+      "city": "Jutiapa",
+      "countryCode": "GT",
+      "region": "Guatemala"
+    },
+    "profiles": [
+      {
+        "network": "X",
+        "username": "Thebyren",
+        "url": "https://twitter.com/Thebyren"
+      },
+      {
+        "network": "Github",
+        "username": "Thebyren",
+        "url": "https://github.com/Thebyren"
+      },
+      {
+        "network": "Linkedin",
+        "username": "byron pastor",
+        "url": "https://Linkedin.com/in/byron-pastor-flores"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Panaderia Don Julio",
+      "position": "auxiliar y dependiente de panaderia",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": null,
+      "summary": "encargado de atender a los clientes, ayudar en la administracion contable, gestionar mercaderia y insumos del local",
+      "highlights": [
+        "Started the company"
+      ]
+    },
+    {
+      "name": "Freelance",
+      "position": "freelance pepakure desinger",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": null,
+      "summary": "modelado, construccion y disenio de modelos 3d listos para utilizarse con el programa pepakure desinger para arte tipo papercraft",
+      "highlights": [
+        "Started the company"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Mariano Galvez de Guatemala",
+      "url": "https://umg.edu.gt/",
+      "area": "Tecnologias de la informacion",
+      "studyType": "Ingenieria en Sistemas",
+      "startDate": "2023-02-03",
+      "endDate": null,
+      "score": null,
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "Oracle Next Education Fundation",
+      "url": "https://umg.edu.gt/",
+      "area": "Programacion",
+      "studyType": "ONE ruta Backend java spring boot",
+      "startDate": "2021-03-20",
+      "endDate": "2022-01-27",
+      "score": null,
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "Instituto Tecnico Particular de Diversificado",
+      "url": "https://umg.edu.gt/",
+      "area": "Tecnologias de la informacion",
+      "studyType": "Bachiller en ciencias de la computacion",
+      "startDate": "2020-01-01",
+      "endDate": "2022-09-27",
+      "score": null,
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "Colegio Vida Nueva",
+      "url": "https://umg.edu.gt/",
+      "area": "nivel basico",
+      "studyType": "basico",
+      "startDate": "2011-01-01",
+      "endDate": null,
+      "score": null,
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "Colegio Vida Nueva",
+      "url": "https://umg.edu.gt/",
+      "area": "nivel primario",
+      "studyType": "primaria",
+      "startDate": "2011-01-01",
+      "endDate": null,
+      "score": null,
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": [
+        "UI",
+        "front-end",
+        "web development"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Avanzado",
+      "keywords": [
+        "backend",
+        "devops",
+        "infrastructure"
+      ]
+    },
+    {
+      "name": "JSON",
+      "level": "Avanzado",
+      "keywords": [
+        "data",
+        "web development",
+        "APIs"
+      ]
+    },
+    {
+      "name": "Astro",
+      "level": "Básico",
+      "keywords": [
+        "front-end",
+        "web development",
+        "static sites"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Master",
+      "keywords": [
+        "javascript",
+        "front-end",
+        "backend"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Master",
+      "keywords": [
+        "front-end",
+        "backend",
+        "full-stack"
+      ]
+    },
+    {
+      "name": "Python",
+      "level": "Master",
+      "keywords": [
+        "backend",
+        "data science",
+        "machine learning"
+      ]
+    },
+    {
+      "name": "Java",
+      "level": "Master",
+      "keywords": [
+        "backend",
+        "android",
+        "enterprise"
+      ]
+    },
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": [
+        "front-end",
+        "web development"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "keywords": [
+        "front-end",
+        "javascript",
+        "web development"
+      ]
+    },
+    {
+      "name": "Vue.js",
+      "level": "Avanzado",
+      "keywords": [
+        "front-end",
+        "javascript",
+        "web development"
+      ]
+    },
+    {
+      "name": "C++",
+      "level": "Intermedio",
+      "keywords": [
+        "backend",
+        "game development",
+        "high performance"
+      ]
+    },
+    {
+      "name": "C",
+      "level": "Intermedio",
+      "keywords": [
+        "backend",
+        "embedded systems",
+        "systems programming"
+      ]
+    },
+    {
+      "name": "Flutter",
+      "level": "Intermedio",
+      "keywords": [
+        "mobile development",
+        "cross-platform",
+        "dart"
+      ]
+    },
+    {
+      "name": "Firebase",
+      "level": "Intermedio",
+      "keywords": [
+        "backend",
+        "mobile development",
+        "cloud computing"
+      ]
+    },
+    {
+      "name": "Google Cloud",
+      "level": "Intermedio",
+      "keywords": [
+        "cloud computing",
+        "backend",
+        "devops"
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "level": "Intermedio",
+      "keywords": [
+        "backend",
+        "java",
+        "web development"
+      ]
+    },
+    {
+      "name": "Bash",
+      "level": "Intermedio",
+      "keywords": [
+        "devops",
+        "automation",
+        "scripting"
+      ]
+    },
+    {
+      "name": "Sass",
+      "level": "Intermedio",
+      "keywords": [
+        "front-end",
+        "CSS",
+        "web development"
+      ]
+    },
+    {
+      "name": "Kivy",
+      "level": "Básico",
+      "keywords": [
+        "mobile development",
+        "python",
+        "multi-platform"
+      ]
+    },
+    {
+      "name": "KivyMD",
+      "level": "Básico",
+      "keywords": [
+        "mobile development",
+        "python",
+        "Kivy",
+        "UI"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "encoder and decoder basic",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/",
+      "active":true
+    },
+    {
+      "name": "encoder and decoder basic",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "highlights": [
+        "Oracle Next Education"
+      ],
+      "url": "https://project.com/",
+      "active":false
+    },
+    {
+      "name": "encoder and decoder basic",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/",
+      "active":true
+    }
+  ]
+}
