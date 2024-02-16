@@ -1,47 +1,40 @@
-# Astro Starter Kit: Minimal
+# Portafolio-CV simple y profesional
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## [miralo en produccion](https://hola.com)
+### Este proyecto es un portafolio-CV simple y profesional creado con Astro. Se caracteriza por:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+  - Facilidad de uso: Puedes generar tu propio CV modificando un único archivo JSON.
+  - Navegación rápida: Utiliza el navegador de atajos de teclado Ninja Keys para moverte por el CV con facilidad.
+  - Estructura robusta: La estructura del proyecto es simple pero robusta, lo que facilita el manejo de los datos del CV.
+  - Diseño atractivo: El diseño del CV es limpio y profesional.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Tecnologías utilizadas:
 
-## 🚀 Project Structure
+  - Astro
+  - JSON
+  - Ninja Keys
+  - vanilla html css y javascript
+### Características principales
+  - Generación de CV a partir de un archivo JSON: Modifica el archivo JSON con tu información personal, experiencia laboral, formación académica y otros datos relevantes. El proyecto se encargará de renderizar la información en un CV web atractivo y profesional.
+  - Navegación con atajos de teclado: Utiliza Ninja Keys para navegar por el CV de forma rápida y eficiente. Los atajos de teclado te permiten acceder a diferentes secciones del CV, como la experiencia laboral, la formación académica o las habilidades.
+  - Estructura simple y robusta: El proyecto está organizado en una estructura simple pero robusta que facilita el manejo de los datos del CV. Esto permite añadir nuevas secciones, modificar la información existente o personalizar el diseño del CV con facilidad.
+  - Diseño atractivo: El diseño del CV es limpio, profesional y adaptable a diferentes dispositivos.
 
-Inside of your Astro project, you'll see the following folders and files:
+### Beneficios
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+    Ahorra tiempo: Crea tu CV en cuestión de minutos modificando un único archivo.
+    Mejora tu imagen profesional: Presenta tu CV de forma profesional y atractiva.
+    Destaca entre la multitud: Ofrece una experiencia de usuario única con la navegación por atajos de teclado.
+    Fácil de personalizar: Adapta el diseño y la información del CV a tus necesidades.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### ¿Para quién es este proyecto?
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+#### Este proyecto es ideal para:
 
-Any static assets, like images, can be placed in the `public/` directory.
+    Profesionales que buscan una forma rápida y sencilla de crear un CV profesional.
+    Desarrolladores que quieren aprender a crear aplicaciones web con Astro.
+    Cualquier persona que quiera mejorar su imagen profesional con un CV atractivo y funcional.
 
-## 🧞 Commands
+  Deja un comentario o pregunta en el repositorio si necesitas ayuda.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+##### Espero que este proyecto te sea útil.
