@@ -31,9 +31,9 @@
 
 #### Este proyecto es ideal para:
 
-    Profesionales que buscan una forma rápida y sencilla de crear un CV profesional.
-    Desarrolladores que quieren aprender a crear aplicaciones web con Astro.
-    Cualquier persona que quiera mejorar su imagen profesional con un CV atractivo y funcional.
+> Profesionales que buscan una forma rápida y sencilla de crear un CV profesional.
+> Desarrolladores que quieren aprender a crear aplicaciones web con Astro.
+> Cualquier persona que quiera mejorar su imagen profesional con un CV atractivo y funcional.
 
   Deja un comentario o pregunta en el repositorio si necesitas ayuda.
 
