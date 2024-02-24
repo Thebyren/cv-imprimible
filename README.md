@@ -22,17 +22,22 @@
 
 ### Beneficios
 
-    Ahorra tiempo: Crea tu CV en cuestión de minutos modificando un único archivo.
-    Mejora tu imagen profesional: Presenta tu CV de forma profesional y atractiva.
-    Destaca entre la multitud: Ofrece una experiencia de usuario única con la navegación por atajos de teclado.
-    Fácil de personalizar: Adapta el diseño y la información del CV a tus necesidades.
+> Ahorra tiempo: Crea tu CV en cuestión de minutos modificando un único archivo.
+
+> Mejora tu imagen profesional: Presenta tu CV de forma profesional y atractiva.
+
+> Destaca entre la multitud: Ofrece una experiencia de usuario única con la navegación por atajos de teclado.
+
+>Fácil de personalizar: Adapta el diseño y la información del CV a tus necesidades.
 
 ### ¿Para quién es este proyecto?
 
 #### Este proyecto es ideal para:
 
 > Profesionales que buscan una forma rápida y sencilla de crear un CV profesional.
+
 > Desarrolladores que quieren aprender a crear aplicaciones web con Astro.
+
 > Cualquier persona que quiera mejorar su imagen profesional con un CV atractivo y funcional.
 
   Deja un comentario o pregunta en el repositorio si necesitas ayuda.
