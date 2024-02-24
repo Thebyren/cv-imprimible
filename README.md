@@ -10,12 +10,12 @@
 
 ### Tecnologías utilizadas:
 
-  - Astro
+  - Astro 🛰️
   - JSON
-  - Ninja Keys
-  - vanilla html css y javascript
+  - Ninja Keys 🥷
+  - vanilla html css y javascript. 🖥️
 ### Características principales
-  - Generación de CV a partir de un archivo JSON: Modifica el archivo JSON con tu información personal, experiencia laboral, formación académica y otros datos relevantes. El proyecto se encargará de renderizar la información en un CV web atractivo y profesional.
+  - Generación de CV 🪪 a partir de un archivo JSON: Modifica el archivo JSON con tu información personal, experiencia laboral, formación académica y otros datos relevantes. El proyecto se encargará de renderizar la información en un CV web atractivo y profesional.
   - Navegación con atajos de teclado: Utiliza Ninja Keys para navegar por el CV de forma rápida y eficiente. Los atajos de teclado te permiten acceder a diferentes secciones del CV, como la experiencia laboral, la formación académica o las habilidades.
   - Estructura simple y robusta: El proyecto está organizado en una estructura simple pero robusta que facilita el manejo de los datos del CV. Esto permite añadir nuevas secciones, modificar la información existente o personalizar el diseño del CV con facilidad.
   - Diseño atractivo: El diseño del CV es limpio, profesional y adaptable a diferentes dispositivos.
