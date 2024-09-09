@@ -5,8 +5,8 @@
     "image": "/profile.jpeg",
     "email": "byronrena1@gmail.com",
     "phone": "(502) 3681 5904",
-    "url": "https://thebyren.gt",
-    "summary": "hola soy byron rene pastor flores, trainer de programacion y un dedicado a la tecnologia y disenio de aplicaciones por linea de comando",
+    "url": "https://github.com/Thebyren",
+    "summary": "hola soy byron rene pastor flores, trainer de programacion, un dedicado a la tecnologia y disenio de aplicaciones por linea de comando",
     "location": {
       "address": "barrio la federal 2-45 zona 3",
       "postalCode": "22001",
@@ -36,8 +36,8 @@
     {
       "name": "Panaderia Don Julio",
       "position": "auxiliar y dependiente de panaderia",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
+      "url": null,
+      "startDate": "2014-01-02",
       "endDate": null,
       "summary": "encargado de atender a los clientes, ayudar en la administracion contable, gestionar mercaderia y insumos del local",
       "highlights": [
@@ -47,8 +47,8 @@
     {
       "name": "Freelance",
       "position": "freelance pepakure desinger",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
+      "url": null,
+      "startDate": "2019-04-20",
       "endDate": null,
       "summary": "modelado, construccion y disenio de modelos 3d listos para utilizarse con el programa pepakure desinger para arte tipo papercraft",
       "highlights": [
@@ -195,7 +195,7 @@
     },
     {
       "name": "TypeScript",
-      "level": "Master",
+      "level": "Básico",
       "keywords": [
         "javascript",
         "front-end",
@@ -204,7 +204,7 @@
     },
     {
       "name": "JavaScript",
-      "level": "Master",
+      "level": "Básico",
       "keywords": [
         "front-end",
         "backend",
@@ -247,15 +247,6 @@
       ]
     },
     {
-      "name": "Vue.js",
-      "level": "Avanzado",
-      "keywords": [
-        "front-end",
-        "javascript",
-        "web development"
-      ]
-    },
-    {
       "name": "C++",
       "level": "Intermedio",
       "keywords": [
@@ -280,15 +271,6 @@
         "mobile development",
         "cross-platform",
         "dart"
-      ]
-    },
-    {
-      "name": "Firebase",
-      "level": "Intermedio",
-      "keywords": [
-        "backend",
-        "mobile development",
-        "cloud computing"
       ]
     },
     {
@@ -329,7 +311,7 @@
     },
     {
       "name": "Kivy",
-      "level": "Básico",
+      "level": "Master",
       "keywords": [
         "mobile development",
         "python",
@@ -338,7 +320,7 @@
     },
     {
       "name": "KivyMD",
-      "level": "Básico",
+      "level": "Master",
       "keywords": [
         "mobile development",
         "python",
@@ -370,36 +352,68 @@
   ],
   "projects": [
     {
-      "name": "encoder and decoder basic",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "name": "challenge_1",
+      "startDate": "2022-12-21",
+      "endDate": "2024-5-28",
+      "description": "una pagina que codifica las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
       "highlights": [
-        "Won award at AIHacks 2016"
+        "Frondend","Sass","OracleAlura"
       ],
-      "url": "https://project.com/",
-      "active":true
-    },
-    {
-      "name": "encoder and decoder basic",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "url": "https://thebyren.github.io/challenge_1/",
+      "active":false
+    },{
+      "name": "3dManager",
+      "startDate": "2024-05-01",
+      "endDate": "2024-09-09",
+      "description": "es un programa escrito en c# que nos permite almacenar modelos 3d en una base de datos",
       "highlights": [
-        "Oracle Next Education"
+        "C#","WPF","VisualStudio"
       ],
-      "url": "https://project.com/",
+      "url": "https://github.com/Thebyren/3dManager",
       "active":false
     },
     {
-      "name": "encoder and decoder basic",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "una pagina que traduce las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "name": "Noa-chat",
+      "startDate": "2024-05-01",
+      "endDate": "2024-09-09",
+      "description": "un asistente de voz potenciado con Llama 2. maneja operaciones como busquedas rapidas y busqueda de archivos",
       "highlights": [
-        "Won award at AIHacks 2016"
+        "Python","IA","LLAMA 2"
       ],
-      "url": "https://project.com/",
+      "url": "https://github.com/Thebyren/noa-chat",
+      "active":false
+    },
+    {
+      "name": "kivy-app-admin",
+      "startDate": "2024-05-01",
+      "endDate": "2024-09-09",
+      "description": "Una aplicacion multiplataforma, centrado en la administracion de inventarios, empleados y productos.",
+      "highlights": [
+        "Python","Kivy","KivyMD","Android"
+      ],
+      "url": "https://github.com/Thebyren/noa-chat",
+      "active":false
+    },
+    {
+      "name": "Help language Adoptium",
+      "startDate": "2024-05-01",
+      "endDate": "2024-09-09",
+      "description": "Ayuda y colaboracion gratuita al proyecto de adoptium. traduccion de los posts sobre el proyecto a espaniol revisado y commiteado en la pagina.",
+      "highlights": [
+        "Python","Kivy","KivyMD","Android"
+      ],
+      "url": "https://adoptium.net/es/about/",
+      "active":true
+    },
+    {
+      "name": "Help LainPilled",
+      "startDate": "2024-05-01",
+      "endDate": "2024-09-09",
+      "description": "Colaboracion gratuita al proyecto de lainpilled.com donde se da soporte para trasladarlo de html vanilla a Astro",
+      "highlights": [
+        "Frondend","Astro","Github Pages"
+      ],
+      "url": "https://github.com/Thebyren/lainpilled",
       "active":true
     }
   ]

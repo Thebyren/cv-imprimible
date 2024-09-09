@@ -7,10 +7,10 @@ import { work } from "@/cv.json";
   <ul>
     {
       work.map(({ name, position, url, startDate, endDate, summary }) => {
-        const StartYear = new Date(startDate).getFullYear();
-        const EndYear =
-          endDate != null ? new Date(endDate).getFullYear() : "actualmente";
+        const StartYear = new Date(startDate+'T00:00:01Z').getFullYear();
+        const EndYear = endDate !== null ? new Date(endDate+'T00:00:01Z').getFullYear() : "actualmente";
         const Years = `${StartYear} - ${EndYear}`;
+        
         return (
           <li>
             <article>
@@ -21,8 +21,13 @@ import { work } from "@/cv.json";
                   </div>
                   <date>{Years}</date>
               </header>
+              
               <footer>
-                <p>{summary},<a href={url} target="_blank">conocer mas.</a></p>
+                <p>{summary}
+                  {url&&(
+                    ","+<a href={url} target="_blank">conocer mas.</a>
+                  )}
+                </p>
               </footer>
             </article>
           </li>
