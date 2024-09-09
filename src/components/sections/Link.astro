@@ -1,0 +1,27 @@
+---
+import Section from "components/section.astro";
+---
+
+<Section >
+    <div class="container">
+        
+        <div>
+            <p>para ver este sitio en produccion visita</p>
+            <p>https://main--lighthearted-pithivier-f103e3.netlify.app/</p>
+        </div>
+        <img src="./qr-code.png" alt="imagen qr que te envia a https://main--lighthearted-pithivier-f103e3.netlify.app/">
+    </div>
+</Section>
+<style>
+    img{
+        width: 9rem;
+        height: auto;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+</style>
+

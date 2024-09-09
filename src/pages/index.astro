@@ -7,6 +7,7 @@ import KeyboardManagerfrom from "@/components/KeyboardManager.astro"
 import Projects from "components/sections/Projects.astro"
 import Skills from "components/sections/Skills.astro"
 import Experience from "components/sections/Experience.astro"
+import Link from "components/sections/Link.astro"
 import {basics} from "@/cv.json"
 const {name, label} = basics
 ---
@@ -19,11 +20,22 @@ const {name, label} = basics
 	<About/>
 	<Skills/>
 	<Education/>
+	<div>
+		<Link/>
+	</div>
 	<KeyboardManagerfrom/>
 </Layout>
 
 <style>
 	html{
 		padding:20px;
+	}
+	div{
+		display: none;
+	}
+	@media print{
+		div{
+			display: block;
+		}
 	}
 </style>
