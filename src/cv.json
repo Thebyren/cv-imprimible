@@ -6,9 +6,9 @@
     "email": "byronrena1@gmail.com",
     "phone": "(502) 3681 5904",
     "url": "https://github.com/Thebyren",
-    "summary": "hola soy byron rene pastor flores, trainer de programacion, un dedicado a la tecnologia y disenio de aplicaciones por linea de comando",
+    "summary": "Soy Byron Rene Pastor Flores, un apasionado desarrollador de software libre con experiencia en diseño de aplicaciones de línea de comandos.",
     "location": {
-      "address": "barrio la federal 2-45 zona 3",
+      "address": "jutiapa.",
       "postalCode": "22001",
       "city": "Jutiapa",
       "countryCode": "GT",
@@ -35,24 +35,23 @@
   "work": [
     {
       "name": "Panaderia Don Julio",
-      "position": "auxiliar y dependiente de panaderia",
+      "position": "Asistente y dependiente",
       "url": null,
       "startDate": "2014-01-02",
       "endDate": null,
       "summary": "encargado de atender a los clientes, ayudar en la administracion contable, gestionar mercaderia y insumos del local",
       "highlights": [
-        "Started the company"
       ]
     },
     {
       "name": "Freelance",
-      "position": "freelance pepakure desinger",
+      "position":  "Diseñador freelance de Pepakura",
       "url": null,
       "startDate": "2019-04-20",
       "endDate": null,
       "summary": "modelado, construccion y disenio de modelos 3d listos para utilizarse con el programa pepakure desinger para arte tipo papercraft",
       "highlights": [
-        "Started the company"
+        
       ]
     }
   ],
@@ -84,7 +83,7 @@
     },
     {
       "institution": "Oracle Next Education Fundation",
-      "url": "https://umg.edu.gt/",
+      "url": "https://www.oracle.com/ar/education/oracle-next-education/",
       "area": "Programacion",
       "studyType": "ONE ruta Backend java spring boot",
       "startDate": "2021-03-20",
@@ -96,7 +95,7 @@
     },
     {
       "institution": "Instituto Tecnico Particular de Diversificado",
-      "url": "https://umg.edu.gt/",
+      "url": "https://www.facebook.com/intecpadi86/",
       "area": "Tecnologias de la informacion",
       "studyType": "Bachiller en ciencias de la computacion",
       "startDate": "2020-01-01",
@@ -108,10 +107,10 @@
     },
     {
       "institution": "Colegio Vida Nueva",
-      "url": "https://umg.edu.gt/",
+      "url": "https://www.facebook.com/p/Colegio-Evang%C3%A9lico-Vida-Nueva-100064632671811/",
       "area": "nivel basico",
       "studyType": "basico",
-      "startDate": "2011-01-01",
+      "startDate": "2016-01-01",
       "endDate": "2019-12-9",
       "score": null,
       "courses": [
@@ -120,11 +119,11 @@
     },
     {
       "institution": "Colegio Vida Nueva",
-      "url": "https://umg.edu.gt/",
+      "url": "https://www.facebook.com/p/Colegio-Evang%C3%A9lico-Vida-Nueva-100064632671811/",
       "area": "nivel primario",
       "studyType": "primaria",
-      "startDate": "2011-01-01",
-      "endDate": null,
+      "startDate": "2011-01-09",
+      "endDate": "2016-09-21",
       "score": null,
       "courses": [
         "DB1101 - Basic SQL"
@@ -357,7 +356,7 @@
       "endDate": "2024-5-28",
       "description": "una pagina que codifica las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
       "highlights": [
-        "Frondend","Sass","OracleAlura"
+        "Frontend","Sass","OracleAlura"
       ],
       "url": "https://thebyren.github.io/challenge_1/",
       "active":false
@@ -398,7 +397,7 @@
       "name": "Help language Adoptium",
       "startDate": "2024-05-01",
       "endDate": "2024-09-09",
-      "description": "Ayuda y colaboracion gratuita al proyecto de adoptium. traduccion de los posts sobre el proyecto a espaniol revisado y commiteado en la pagina.",
+      "description": "Ayuda y colaboracion gratuita al proyecto de adoptium.net traduccion de los posts sobre el proyecto a espaniol revisado y commiteado en la pagina.",
       "highlights": [
         "Python","Kivy","KivyMD","Android"
       ],
@@ -411,7 +410,7 @@
       "endDate": "2024-09-09",
       "description": "Colaboracion gratuita al proyecto de lainpilled.com donde se da soporte para trasladarlo de html vanilla a Astro",
       "highlights": [
-        "Frondend","Astro","Github Pages"
+        "Frontend","Astro","Github Pages"
       ],
       "url": "https://github.com/Thebyren/lainpilled",
       "active":true
