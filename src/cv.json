@@ -112,7 +112,7 @@
       "area": "nivel basico",
       "studyType": "basico",
       "startDate": "2011-01-01",
-      "endDate": null,
+      "endDate": "2019-12-9",
       "score": null,
       "courses": [
         "DB1101 - Basic SQL"
