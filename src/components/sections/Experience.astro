@@ -23,9 +23,12 @@ import { work } from "@/cv.json";
               </header>
               
               <footer>
-                <p>{summary}
-                  {url&&(
-                    ","+<a href={url} target="_blank">conocer mas.</a>
+                <p>
+                  {summary}
+                  {url && (
+                    <>
+                      , <a href={url} target="_blank">conocer más.</a>
+                    </>
                   )}
                 </p>
               </footer>
