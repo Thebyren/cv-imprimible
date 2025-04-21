@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Byron Rene Pastor Flores",
-    "label": "Estudiante de Sistemas y FreeSoftware Developer",
+    "label": "Estudiante de Sistemas, FreeSoftware Developer, programador python orientado a odoo",
     "image": "/profile.jpeg",
     "email": "byronrena1@gmail.com",
     "phone": "(502) 3681 5904",
     "url": "https://github.com/Thebyren",
-    "summary": "Soy Byron Rene Pastor Flores, un apasionado desarrollador de software libre con experiencia en diseño de aplicaciones de línea de comandos.",
+    "summary": "Soy Byron Rene Pastor Flores, un apasionado desarrollador de software libre con experiencia en diseño de aplicaciones de línea de comandos, aplicaciones de algoritmia compleja en rust y desarrollador de python para personalizaciones en odoo",
     "location": {
       "address": "jutiapa.",
       "postalCode": "22001",
@@ -34,6 +34,19 @@
   },
   "work": [
     {
+      "name": "Bit Sistemas de Guatemala",
+      "position": "Programador jr y Especilista en soporte tecnico de odoo",
+      "url": "bitsis.gt",
+      "startDate": "2024-9-02",
+      "endDate": null,
+      "summary": "Encargado de dar soluciones tecnicas y desarrollos personalizados en el ERP ODOO",
+      "highlights": [
+        "odoo",
+        "python",
+        "erp"
+      ]
+    },
+    {
       "name": "Panaderia Don Julio",
       "position": "Asistente y dependiente",
       "url": null,
@@ -48,7 +61,7 @@
       "position":  "Diseñador freelance de Pepakura",
       "url": null,
       "startDate": "2019-04-20",
-      "endDate": null,
+      "endDate": "2025-03-18",
       "summary": "modelado, construccion y disenio de modelos 3d listos para utilizarse con el programa pepakure desinger para arte tipo papercraft",
       "highlights": [
         
@@ -351,6 +364,17 @@
   ],
   "projects": [
     {
+      "name": "NioBerp",
+      "startDate": "2022-12-21",
+      "endDate": "2024-5-28",
+      "description": "ERP basado en odoo escrito en rust; modular, eficiente, seguro, facil de usar y desarrollar",
+      "highlights": [
+        "Rust","ERP","Saas"
+      ],
+      "url": "",
+      "active":true
+    },
+    {
       "name": "challenge_1",
       "startDate": "2022-12-21",
       "endDate": "2024-5-28",
@@ -402,7 +426,7 @@
         "Python","Kivy","KivyMD","Android"
       ],
       "url": "https://adoptium.net/es/about/",
-      "active":true
+      "active":false
     },
     {
       "name": "Help LainPilled",
