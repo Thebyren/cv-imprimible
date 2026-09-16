@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Byron Rene Pastor Flores",
-    "label": "Estudiante de Sistemas, FreeSoftware Developer, programador python orientado a odoo",
+    "label": "Fundador de NioSystems · Desarrollador Odoo ERP · Estudiante de Ingeniería en Sistemas",
     "image": "/profile.jpeg",
     "email": "byronrena1@gmail.com",
     "phone": "(502) 3681 5904",
     "url": "https://github.com/Thebyren",
-    "summary": "Soy Byron Rene Pastor Flores, un apasionado desarrollador de software libre con experiencia en diseño de aplicaciones de línea de comandos, aplicaciones de algoritmia compleja en rust y desarrollador de python para personalizaciones en odoo",
+    "summary": "Desarrollador de software libre con experiencia en Odoo ERP: implementaciones, migraciones de versión y cumplimiento fiscal en Guatemala (FEL/DTE, IGSS, ISR) para más de 20 clientes en múltiples industrias. Fundador de NioSystems, consultoría freelance y hosting SaaS multi-tenant de Odoo. Desarrollo también proyectos propios: NioBerp (ERP modular en Rust) y nioClock (terminal de asistencia IoT sobre ESP32).",
     "location": {
       "address": "jutiapa.",
       "postalCode": "22001",
@@ -34,50 +34,42 @@
   },
   "work": [
     {
-      "name": "Bit Sistemas de Guatemala",
-      "position": "Programador jr y Especilista en soporte tecnico de odoo",
-      "url": "https://bitsis.gt/",
-      "startDate": "2025-09-02",
+      "name": "NioSystems",
+      "position": "Fundador / Consultor ERP Odoo",
+      "url": "https://nio.gt",
+      "startDate": "2026-08-01",
       "endDate": null,
-      "summary": "Encargado de dar soluciones tecnicas y desarrollos personalizados en el ERP ODOO",
+      "summary": "Consultoría freelance de Odoo ERP y hosting SaaS multi-tenant para pequeñas y medianas empresas. Desarrollo de productos propios: NioBerp (ERP en Rust) y nioClock (terminal de asistencia IoT).",
       "highlights": [
+        "Infraestructura de hosting multi-tenant de Odoo (Docker/Caddy/Cloudflare)",
+        "Conectores logísticos propios para Odoo (Forza, Boxful)",
+        "Metodología de proyecto alineada a ISO/IEC 29110 (Very Small Entities)"
+      ]
+    },
+    {
+      "name": "Bit Sistemas de Guatemala",
+      "position": "Programador y Consultor Funcional/Técnico de Odoo",
+      "url": "https://bitsis.gt/",
+      "startDate": "2025-10-01",
+      "endDate": "2026-07-01",
+      "summary": "Implementaciones, migraciones de versión y soporte técnico de Odoo ERP para aproximadamente 20 clientes en industrias como medicina, restaurantes, distribución, manufactura y bienes raíces.",
+      "highlights": [
+        "Migraciones de versión de Odoo (10 a 19), incluyendo nómina y localización fiscal",
+        "Módulos de facturación electrónica FEL/DTE Guatemala (Infile, Tekra, Megaprint, G4S)",
+        "Contribuyente registrado en el CLA corporativo de Odoo (localización l10n_gt)"
       ]
     },
     {
       "name": "Panaderia Don Julio",
-      "position": "Asistente y dependiente",
+      "position": "Encargado de Operaciones y Procesos",
       "url": null,
-      "startDate": "2014-01-02",
+      "startDate": "2017-01-02",
       "endDate": null,
-      "summary": "encargado de atender a los clientes, ayudar en la administracion contable, gestionar mercaderia y insumos del local",
-      "highlights": [
-      ]
-    },
-    {
-      "name": "Freelance",
-      "position":  "Diseñador freelance de Pepakura",
-      "url": null,
-      "startDate": "2019-04-20",
-      "endDate": "2025-03-18",
-      "summary": "modelado, construccion y disenio de modelos 3d listos para utilizarse con el programa pepakure desinger para arte tipo papercraft",
-      "highlights": [
-        
-      ]
+      "summary": "Gestión operativa y administrativa del negocio familiar: control de inventario, flujo de caja diario y atención al cliente.",
+      "highlights": []
     }
   ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ]
-    }
-  ],
+  "volunteer": [],
   "education": [
     {
       "institution": "Universidad Mariano Galvez de Guatemala",
@@ -140,84 +132,27 @@
       ]
     }
   ],
-  "awards": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "url": "https://publication.com",
-      "summary": "Description…"
-    }
-  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
   "skills": [
     {
-      "name": "CSS",
+      "name": "Odoo",
       "level": "Master",
       "keywords": [
-        "UI",
-        "front-end",
-        "web development"
+        "ERP",
+        "Python",
+        "customización",
+        "cumplimiento fiscal"
       ]
     },
     {
-      "name": "Linux",
+      "name": "Rust",
       "level": "Avanzado",
       "keywords": [
         "backend",
-        "devops",
-        "infrastructure"
-      ]
-    },
-    {
-      "name": "JSON",
-      "level": "Avanzado",
-      "keywords": [
-        "data",
-        "web development",
-        "APIs"
-      ]
-    },
-    {
-      "name": "Astro",
-      "level": "Básico",
-      "keywords": [
-        "front-end",
-        "web development",
-        "static sites"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Básico",
-      "keywords": [
-        "javascript",
-        "front-end",
-        "backend"
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Básico",
-      "keywords": [
-        "front-end",
-        "backend",
-        "full-stack"
+        "ERP",
+        "systems programming"
       ]
     },
     {
@@ -247,12 +182,66 @@
       ]
     },
     {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": [
+        "UI",
+        "front-end",
+        "web development"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Avanzado",
+      "keywords": [
+        "backend",
+        "devops",
+        "infrastructure"
+      ]
+    },
+    {
+      "name": "JSON",
+      "level": "Avanzado",
+      "keywords": [
+        "data",
+        "web development",
+        "APIs"
+      ]
+    },
+    {
       "name": "React",
       "level": "Avanzado",
       "keywords": [
         "front-end",
         "javascript",
         "web development"
+      ]
+    },
+    {
+      "name": "Astro",
+      "level": "Básico",
+      "keywords": [
+        "front-end",
+        "web development",
+        "static sites"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Básico",
+      "keywords": [
+        "javascript",
+        "front-end",
+        "backend"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Básico",
+      "keywords": [
+        "front-end",
+        "backend",
+        "full-stack"
       ]
     },
     {
@@ -320,7 +309,7 @@
     },
     {
       "name": "Kivy",
-      "level": "Master",
+      "level": "Intermedio",
       "keywords": [
         "mobile development",
         "python",
@@ -329,7 +318,7 @@
     },
     {
       "name": "KivyMD",
-      "level": "Master",
+      "level": "Intermedio",
       "keywords": [
         "mobile development",
         "python",
@@ -344,44 +333,43 @@
       "fluency": "Native speaker"
     }
   ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
-  ],
+  "interests": [],
+  "references": [],
   "projects": [
     {
       "name": "NioBerp",
       "startDate": "2022-12-21",
-      "endDate": "2024-5-28",
-      "description": "ERP basado en odoo escrito en rust; modular, eficiente, seguro, facil de usar y desarrollar",
+      "endDate": null,
+      "description": "ERP modular multi-tenant escrito en Rust, con ledger financiero de grado legal, orquestación por saga y frontend propio en Leptos.",
       "highlights": [
-        "Rust","ERP","Saas"
+        "Rust", "ERP", "SaaS"
       ],
       "url": "",
-      "active":true
+      "active": true
     },
     {
-      "name": "challenge_1",
-      "startDate": "2022-12-21",
-      "endDate": "2024-5-28",
-      "description": "una pagina que codifica las vocales de cualquier texto ingresado y las transcribe en un texto completamente diferente que se puede recuperar nuevamente en el mismo decodificador",
+      "name": "NioUpgrader",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "description": "Motor de actualización automática de código Odoo entre versiones mediante abstracción semántica: snapshotter AST, detección de renombres/cambios de tipo, generación de reglas y transformación de código con LibCST.",
       "highlights": [
-        "Frontend","Sass","OracleAlura"
+        "Python", "LibCST", "Odoo", "Migración"
       ],
-      "url": "https://thebyren.github.io/challenge_1/",
-      "active":false
-    },{
+      "url": "",
+      "active": true
+    },
+    {
+      "name": "nioClock",
+      "startDate": "2025-01-01",
+      "endDate": null,
+      "description": "Terminal de asistencia IoT sobre ESP32 con módulos intercambiables (huella, NFC, PIN, código de barras), sincronización HTTPS, cola offline y actualizaciones OTA, con integración a Odoo.",
+      "highlights": [
+        "C", "ESP32", "IoT", "Odoo"
+      ],
+      "url": "https://github.com/Thebyren/oclock",
+      "active": true
+    },
+    {
       "name": "3dManager",
       "startDate": "2024-05-01",
       "endDate": "2024-09-09",
@@ -390,7 +378,7 @@
         "C#","WPF","VisualStudio"
       ],
       "url": "https://github.com/Thebyren/3dManager",
-      "active":false
+      "active": false
     },
     {
       "name": "Noa-chat",
@@ -401,29 +389,18 @@
         "Python","IA","LLAMA 2"
       ],
       "url": "https://github.com/Thebyren/noa-chat",
-      "active":false
-    },
-    {
-      "name": "kivy-app-admin",
-      "startDate": "2024-05-01",
-      "endDate": "2024-09-09",
-      "description": "Una aplicacion multiplataforma, centrado en la administracion de inventarios, empleados y productos.",
-      "highlights": [
-        "Python","Kivy","KivyMD","Android"
-      ],
-      "url": "https://github.com/Thebyren/noa-chat",
-      "active":false
+      "active": false
     },
     {
       "name": "Help language Adoptium",
       "startDate": "2024-05-01",
       "endDate": "2024-09-09",
-      "description": "Ayuda y colaboracion gratuita al proyecto de adoptium.net traduccion de los posts sobre el proyecto a espaniol revisado y commiteado en la pagina.",
+      "description": "Contribución de traducciones al español para la documentación del proyecto Adoptium; PR revisado y fusionado (merged) en el repositorio del proyecto.",
       "highlights": [
-        "Python","Kivy","KivyMD","Android"
+        "Open Source","Traducción","Documentación"
       ],
       "url": "https://adoptium.net/es/about/",
-      "active":false
+      "active": false
     },
     {
       "name": "Help LainPilled",
@@ -434,7 +411,7 @@
         "Frontend","Astro","Github Pages"
       ],
       "url": "https://github.com/Thebyren/lainpilled",
-      "active":true
+      "active": true
     }
   ]
 }
