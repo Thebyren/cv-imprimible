@@ -5,7 +5,7 @@ const { title } = Astro.props
 <section>
   {title && (
     <header>
-      <span class="label">{title}</span>
+      <span class="sec-label">{title}</span>
     </header>
   )}
   <slot/>
@@ -14,35 +14,39 @@ const { title } = Astro.props
 <style>
   section {
     max-width: 740px;
-    margin: 0 auto 20px;
-    background: var(--bg-elevated);
+    margin: 0 auto 16px;
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.25rem 1.5rem 1.5rem;
+    border-left: 2px solid var(--accent);
+    border-radius: var(--r);
+    padding: 1.25rem 1.5rem 1.4rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   header {
     margin-bottom: 1rem;
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.55rem;
     border-bottom: 1px solid var(--border);
   }
 
-  .label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    font-weight: 600;
+  .sec-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--ink-tertiary);
+    letter-spacing: 0.16em;
+    color: var(--accent-hi);
   }
 
   @media print {
     section {
-      border: 1px solid var(--border);
-      margin: 0 auto 14px;
-      padding: 0.9rem 1.2rem 1.1rem;
+      background: #fff;
+      border: 1px solid rgba(10,11,15,0.12);
+      border-left: 2px solid #1a3ecc;
+      margin: 0 auto 12px;
+      padding: 0.85rem 1.1rem 1rem;
     }
+    .sec-label { color: #1a3ecc; }
   }
 </style>

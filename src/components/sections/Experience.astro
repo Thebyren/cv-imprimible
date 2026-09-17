@@ -3,29 +3,28 @@ import Section from "components/section.astro";
 import { work } from "@/cv.json";
 ---
 
-<Section title="Experience">
+<Section title="Historial Operativo">
   <ul>
     {
       work.map(({ name, position, url, startDate, endDate, summary }) => {
-        const StartYear = new Date(startDate+'T00:00:01Z').getFullYear();
-        const EndYear = endDate !== null ? new Date(endDate+'T00:00:01Z').getFullYear() : "presente";
-        const Years = `${StartYear} — ${EndYear}`;
+        const sy = new Date(startDate+'T00:00:01Z').getFullYear();
+        const ey = endDate ? new Date(endDate+'T00:00:01Z').getFullYear() : "presente";
+        const range = `${sy} — ${ey}`;
+        const current = endDate === null;
 
         return (
           <li>
-            <article>
+            <article class={current ? "current" : ""}>
               <header>
-                <div class="title-block">
+                <div class="title">
                   <h3>{name}</h3>
                   <h4>{position}</h4>
                 </div>
-                <date>{Years}</date>
+                <date>{range}</date>
               </header>
               <p>
                 {summary}
-                {url && (
-                  <> · <a href={url} target="_blank">ver más →</a></>
-                )}
+                {url && <> · <a href={url} target="_blank">ver más →</a></>}
               </p>
             </article>
           </li>
@@ -36,31 +35,22 @@ import { work } from "@/cv.json";
 </Section>
 
 <style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+  ul { display: flex; flex-direction: column; gap: 0; }
 
-  li + li {
-    border-top: 1px solid var(--border);
-  }
+  li + li { border-top: 1px solid var(--border); }
 
   article {
-    padding: 1rem 0;
-    padding-left: 0.75rem;
-    border-left: 2px solid var(--border);
-    margin-left: 0.25rem;
-    transition: border-color 0.15s ease-out;
+    padding: 1rem 0 1rem 1rem;
+    border-left: 2px solid var(--border-2);
+    margin-left: 2px;
+    transition: border-color 0.15s;
   }
 
-  article:hover {
-    border-left-color: var(--accent);
-  }
+  article.current { border-left-color: var(--ok); }
 
-  li:first-child article {
-    padding-top: 0;
-  }
+  article:hover { border-left-color: var(--accent); }
+
+  li:first-child article { padding-top: 0; }
 
   header {
     display: flex;
@@ -73,32 +63,23 @@ import { work } from "@/cv.json";
   h3 {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--ink);
     letter-spacing: -0.02em;
+    color: var(--ink);
   }
 
   h4 {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    color: var(--ink-secondary);
-    margin-top: 1px;
+    color: var(--ink-2);
+    margin-top: 2px;
   }
 
-  a {
-    color: var(--accent);
-    font-size: 0.8rem;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+  a { color: var(--accent-hi); font-size: 0.8rem; }
+  a:hover { text-decoration: underline; }
 
   @media print {
-    article {
-      padding: 0.7rem 0 0.7rem 0.75rem;
-    }
-    li:first-child article {
-      padding-top: 0;
-    }
+    article { padding: 0.65rem 0 0.65rem 0.9rem; }
+    li:first-child article { padding-top: 0; }
+    article.current { border-left-color: #157a44; }
   }
 </style>

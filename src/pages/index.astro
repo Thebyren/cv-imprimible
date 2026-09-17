@@ -3,7 +3,7 @@ import Layout from "@/layouts/layout.astro"
 import About from "components/sections/About.astro"
 import Education from "components/sections/Education.astro"
 import Hero from "components/sections/Hero.astro"
-import KeyboardManagerfrom from "@/components/KeyboardManager.astro"
+import KeyboardManager from "@/components/KeyboardManager.astro"
 import Projects from "components/sections/Projects.astro"
 import Skills from "components/sections/Skills.astro"
 import Experience from "components/sections/Experience.astro"
@@ -12,7 +12,23 @@ import {basics} from "@/cv.json"
 const {name, label} = basics
 ---
 
-<Layout title=`portafolio de ${name} - ${label}`>
+<Layout title=`${name} · CV`>
+
+  <!-- ── chrome de página (solo web) ───────────────── -->
+  <div class="chrome" aria-hidden="true">
+    <span class="doc-id">CV.BPF-01 · REV. 2026</span>
+    <span class="signal">
+      <span class="dot"></span>
+      SEÑAL ACTIVA
+    </span>
+  </div>
+
+  <!-- ── sidebar lateral (solo web) ───────────────── -->
+  <aside class="sidebar" aria-hidden="true">
+    <span class="sid-text">BYRON PASTOR · 14.2915°N 89.8956°W · JUTIAPA GT</span>
+  </aside>
+
+  <!-- ── contenido principal ───────────────────────── -->
   <main>
     <Hero/>
     <Experience/>
@@ -20,28 +36,95 @@ const {name, label} = basics
     <About/>
     <Skills/>
     <Education/>
-    <div class="print-link">
-      <Link/>
-    </div>
+    <div class="print-link"><Link/></div>
   </main>
-  <KeyboardManagerfrom/>
+
+  <KeyboardManager/>
+
 </Layout>
 
 <style>
+
+  /* ── chrome ──────────────────────────────────────── */
+  .chrome {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8,9,13,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .signal {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--ok);
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ok);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* ── sidebar ─────────────────────────────────────── */
+  .sidebar {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    bottom: 0;
+    width: 24px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+
+  .sid-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  /* ── main ────────────────────────────────────────── */
   main {
-    padding: 24px 16px 40px;
+    margin-top: 28px;
+    margin-left: 24px;
+    padding: 24px 20px 60px;
   }
 
-  .print-link {
-    display: none;
-  }
+  .print-link { display: none; }
 
+  /* ── print ───────────────────────────────────────── */
   @media print {
+    .chrome, .sidebar { display: none; }
     main {
-      padding: 12px 8px 0;
+      margin: 0;
+      padding: 10px 8px 0;
     }
-    .print-link {
-      display: block;
-    }
+    .print-link { display: block; }
   }
+
 </style>

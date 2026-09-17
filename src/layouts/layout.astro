@@ -12,7 +12,7 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>{ title }</title>
   </head>
   <body>
@@ -23,96 +23,88 @@ const { title } = Astro.props
 <style is:global>
 
   :root {
-    --bg: #f4f5f7;
-    --bg-elevated: #ffffff;
-    --ink: #0a0b0f;
-    --ink-secondary: #4a4f60;
-    --ink-tertiary: #7a8090;
-    --accent: #2b5cff;
-    --accent-subtle: rgba(43, 92, 255, 0.08);
-    --border: rgba(10, 11, 15, 0.12);
-    --border-hard: rgba(10, 11, 15, 0.22);
-    --status-ok: #1fa35c;
-    --amber: #c8a832;
-    --font-sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", monospace;
-    --radius: 2px;
+    --bg:          #08090d;
+    --bg-card:     #0e1018;
+    --bg-elevated: #141722;
+    --ink:         #eef0f6;
+    --ink-2:       #9aa0bc;
+    --ink-3:       #444c6e;
+    --accent:      #2b5cff;
+    --accent-hi:   #4a78ff;
+    --accent-sub:  rgba(43,92,255,0.12);
+    --ok:          #1fa35c;
+    --ok-sub:      rgba(31,163,92,0.12);
+    --border:      rgba(238,240,246,0.07);
+    --border-2:    rgba(238,240,246,0.13);
+    --font:        "Archivo", system-ui, -apple-system, sans-serif;
+    --mono:        ui-monospace, "Cascadia Mono", Consolas, "SF Mono", monospace;
+    --r:           2px;
   }
 
   html {
-    font-family: var(--font-sans);
+    font-family: var(--font);
     background: var(--bg);
     color: var(--ink);
     letter-spacing: -0.015rem;
+    scroll-behavior: smooth;
   }
 
-  *::selection {
-    background: var(--accent);
-    color: #fff;
-  }
+  *::selection { background: var(--accent); color: #fff; }
 
-  body, figure {
-    margin: 0;
-    padding: 0;
-  }
+  body, figure { margin: 0; padding: 0; }
 
-  a {
-    text-decoration: none;
-    color: var(--accent);
-  }
+  a    { text-decoration: none; color: var(--accent-hi); }
+  ul   { list-style: none; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  h1, h2, h3, h4 {
-    margin: 0;
-    font-family: var(--font-sans);
-    color: var(--ink);
-  }
+  h1,h2,h3,h4 { margin: 0; font-family: var(--font); color: var(--ink); }
 
   p {
-    color: var(--ink-secondary);
+    color: var(--ink-2);
     font-size: 0.85rem;
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
     text-wrap: pretty;
   }
 
   date {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--accent);
-    background: var(--accent-subtle);
-    padding: 2px 8px;
-    border-radius: var(--radius);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-family: var(--mono);
+    font-size: 0.68rem;
     font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-hi);
+    background: var(--accent-sub);
+    padding: 2px 9px;
+    border-radius: var(--r);
+    white-space: nowrap;
   }
 
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  /* ── PRINT RESET ─────────────────────────────────── */
   @media print {
     :root {
-      --bg: #fff;
+      --bg:          #fff;
+      --bg-card:     #fff;
       --bg-elevated: #fff;
+      --ink:         #0a0b0f;
+      --ink-2:       #4a4f60;
+      --ink-3:       #7a8090;
+      --accent:      #1a3ecc;
+      --accent-hi:   #1a3ecc;
+      --accent-sub:  rgba(26,62,204,0.07);
+      --border:      rgba(10,11,15,0.12);
+      --border-2:    rgba(10,11,15,0.20);
+      --ok:          #157a44;
+      --ok-sub:      rgba(21,122,68,0.08);
     }
-    html {
-      background: #fff;
-    }
-    a {
-      color: var(--ink-secondary);
-    }
-    date {
-      background: none;
-      color: var(--ink-tertiary);
-      border: 1px solid var(--border-hard);
-    }
+    html { background: #fff; }
+    a    { color: var(--ink-2); }
+    date { background: none; border: 1px solid var(--border-2); }
   }
 
 </style>

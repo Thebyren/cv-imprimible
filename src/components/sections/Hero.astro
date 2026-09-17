@@ -6,215 +6,322 @@ import X from "@/icons/X.astro";
 import Linkedin from "@/icons/Linkedin.astro";
 import Github from "@/icons/Github.astro";
 import WorlMap from "@/icons/WorlMap.astro";
-import Section from "@/components/section.astro";
 import type { SocialIcon } from "@/types";
-const { name, label, image, location, profiles, phone, email } = basics;
+
+const { name, label, image, location, profiles, phone, email, summary } = basics;
 const { city, region } = location;
-const Linkedininfo = profiles.find(({network})=> network ==="Linkedin")
+const linkedin = profiles.find(({network}) => network === "Linkedin");
 
-const SOCIAL_ICONS: SocialIcon = {
-  Github,
-  Linkedin,
-  X,
-};
+const ICONS: SocialIcon = { Github, Linkedin, X };
 
-const printInfo = [Linkedininfo?.url, email, phone].filter(Boolean).join("  ·  ")
+const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
 ---
 
-<Section>
-  <div class="container">
-    <div class="info">
-      <div class="meta">
-        <span class="meta-tag">
-          <WorlMap/>
-          {city}, {region}
-        </span>
-      </div>
-      <h1>{name}</h1>
-      <h2>{label}</h2>
+<section class="hero">
 
-      <div class="print-info">
-        <p>{printInfo}</p>
+  <!-- dot-grid decorativo (solo web) -->
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+
+    <!-- columna izquierda -->
+    <div class="left">
+      <p class="kicker">
+        <WorlMap/> {city}, {region}
+      </p>
+
+      <h1>{name.split(" ").slice(0,2).join(" ")}<br/><span class="name-last">{name.split(" ").slice(2).join(" ")}</span></h1>
+
+      <p class="label-line">{label}</p>
+
+      <!-- log card tipo nio.gt (solo web) -->
+      <div class="log-card non-print" aria-label="Resumen técnico">
+        <span class="log-title">perfil.log</span>
+        <ul class="log-lines">
+          <li><span class="ln">01</span><span class="lk">experiencia Odoo</span><span class="dots"></span><span class="lv ok">2+ años</span></li>
+          <li><span class="ln">02</span><span class="lk">clientes atendidos</span><span class="dots"></span><span class="lv ok">+20</span></li>
+          <li><span class="ln">03</span><span class="lk">proyectos activos</span><span class="dots"></span><span class="lv ok">3</span></li>
+          <li><span class="ln">04</span><span class="lk">localización fiscal</span><span class="dots"></span><span class="lv ok">FEL/DTE ✓</span></li>
+          <li><span class="ln">05</span><span class="lk">infraestructura</span><span class="dots"></span><span class="lv">Docker / Caddy</span></li>
+        </ul>
       </div>
 
-      <footer class="non-print">
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Enviar correo a ${name}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              <Mail />
-              <span>{email}</span>
+      <!-- print info -->
+      <p class="print-info print">{printInfo}</p>
+
+      <!-- contacto web -->
+      <footer class="contacts non-print">
+        {email && (
+          <a href={`mailto:${email}`} class="contact-chip" title={`Correo: ${email}`}>
+            <Mail/> <span>{email}</span>
+          </a>
+        )}
+        {phone && (
+          <a href={`tel:+${phone}`} class="contact-chip" title={`Teléfono: ${phone}`}>
+            <Phone/> <span>{phone}</span>
+          </a>
+        )}
+        {profiles.map(({ network, url }) => {
+          const Icon = ICONS[network];
+          return (
+            <a href={url} class="icon-chip" title={network} target="_blank" rel="noopener">
+              <Icon/>
             </a>
-          )
-        }
-        {
-          phone && (
-            <a
-              href={`tel:+${phone}`}
-              title={`Llamar a ${name}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              <Phone />
-              <span>{phone}</span>
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, username, url }) => {
-            const Icon_ = SOCIAL_ICONS[network];
-            return (
-              <a
-                href={url}
-                title={`Perfil de ${name} en ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-link"
-              >
-                <Icon_ />
-              </a>
-            );
-          })
-        }
+          );
+        })}
       </footer>
     </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
+
+    <!-- columna derecha: foto -->
+    <div class="right">
+      <div class="photo-frame">
+        <img src={image} alt={name} />
+        <span class="photo-label">BPF-01</span>
+      </div>
+    </div>
+
   </div>
-</Section>
+</section>
 
 <style>
-  .container {
+
+  /* ── contenedor ──────────────────────────────────── */
+  .hero {
+    position: relative;
+    max-width: 740px;
+    margin: 0 auto 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+
+  /* dot-grid sutil */
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(43,92,255,0.1) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 2rem 2rem 1.75rem;
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    flex: 1;
-  }
+  /* ── izquierda ───────────────────────────────────── */
+  .left { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
 
-  .meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .meta-tag {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
+  .kicker {
+    font-family: var(--mono);
+    font-size: 0.62rem;
     font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-tertiary);
+    color: var(--ink-3);
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
+    margin: 0;
   }
 
   h1 {
-    font-size: 1.9rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
     color: var(--ink);
+    text-wrap: balance;
   }
 
-  h2 {
-    font-size: 0.95rem;
+  .name-last {
+    color: var(--accent-hi);
+  }
+
+  .label-line {
+    font-size: 0.85rem;
     font-weight: 500;
-    color: var(--ink-secondary);
+    color: var(--ink-2);
     letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.4;
   }
 
-  figure {
-    flex-shrink: 0;
+  /* ── log card ────────────────────────────────────── */
+  .log-card {
+    border: 1px solid var(--border-2);
+    border-radius: var(--r);
+    padding: 0.75rem 1rem;
+    background: rgba(8,9,13,0.6);
   }
 
-  img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 90px;
-    border-radius: var(--radius);
-    border: 2px solid var(--accent);
+  .log-title {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
   }
 
-  footer {
+  .log-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .log-lines li {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .ln {
+    color: var(--ink-3);
+    font-size: 0.6rem;
+    min-width: 16px;
+  }
+
+  .lk {
+    color: var(--ink-2);
+    font-size: 0.72rem;
+  }
+
+  .dots {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dotted var(--ink-3);
+    margin: 0 4px;
+    min-width: 16px;
+    align-self: center;
+    opacity: 0.4;
+  }
+
+  .lv {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.72rem;
+  }
+
+  .lv.ok { color: var(--ok); }
+
+  /* ── contacto ────────────────────────────────────── */
+  .contacts {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     gap: 6px;
-    margin-top: 0.4rem;
   }
 
-  .contact-link {
+  .contact-chip {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--ink-secondary);
-    border: 1px solid var(--border-hard);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--ink-2);
+    border: 1px solid var(--border-2);
     padding: 4px 10px;
-    border-radius: var(--radius);
-    transition: all 0.15s ease-out;
-    letter-spacing: 0.01em;
+    border-radius: var(--r);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
   }
 
-  .contact-link:hover {
+  .contact-chip:hover {
     border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-subtle);
+    color: var(--accent-hi);
+    background: var(--accent-sub);
   }
 
-  .icon-link {
+  .icon-chip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--ink-tertiary);
-    border: 1px solid var(--border-hard);
-    padding: 4px;
-    height: 28px;
-    width: 28px;
-    border-radius: var(--radius);
-    transition: all 0.15s ease-out;
+    width: 30px;
+    height: 30px;
+    color: var(--ink-3);
+    border: 1px solid var(--border-2);
+    border-radius: var(--r);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
   }
 
-  .icon-link:hover {
+  .icon-chip:hover {
     border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-subtle);
+    color: var(--accent-hi);
+    background: var(--accent-sub);
   }
 
+  /* ── foto ────────────────────────────────────────── */
+  .right { flex-shrink: 0; }
+
+  .photo-frame {
+    position: relative;
+    display: inline-block;
+  }
+
+  img {
+    display: block;
+    width: 96px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--r);
+    border: 2px solid var(--accent);
+    filter: grayscale(20%) contrast(1.05);
+  }
+
+  .photo-label {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 1px 6px;
+    border-radius: 1px;
+    white-space: nowrap;
+  }
+
+  /* ── print info ──────────────────────────────────── */
   .print-info {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-2);
+    letter-spacing: 0.02em;
     display: none;
-    margin-top: 0.3rem;
   }
 
-  .print-info p {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--ink-secondary);
-    letter-spacing: 0.02em;
-  }
+  .non-print { display: flex; }
+  .print     { display: none; }
 
   @media print {
-    .non-print { display: none; }
-    .print-info { display: block; }
-    img { width: 80px; border: 1px solid var(--border-hard); }
-    h1 { font-size: 1.6rem; }
+    .hero {
+      background: #fff;
+      border: 1px solid rgba(10,11,15,0.15);
+    }
+    .grid-overlay { display: none; }
+    .hero-inner   { padding: 1rem 1.2rem; }
+    h1 { font-size: 1.7rem; color: #0a0b0f; }
+    .name-last { color: #1a3ecc; }
+    .label-line { color: #4a4f60; }
+    .non-print { display: none !important; }
+    .print     { display: block !important; }
+    img { filter: none; width: 80px; border-color: rgba(10,11,15,0.3); }
+    .photo-label { display: none; }
+    .kicker { color: #7a8090; }
   }
 </style>

@@ -3,25 +3,21 @@ import Section from "components/section.astro";
 import { education } from "@/cv.json";
 ---
 
-<Section title="Education">
+<Section title="Formación">
   <ul>
     {
       education.map(({ institution, url, area, studyType, startDate, endDate }) => {
-        const StartYear = new Date(startDate).getFullYear();
-        const EndYear = endDate != null ? new Date(endDate).getFullYear() : "presente";
-        const Years = `${StartYear} — ${EndYear}`;
+        const sy = new Date(startDate).getFullYear();
+        const ey = endDate ? new Date(endDate).getFullYear() : "presente";
+        const range = `${sy} — ${ey}`;
         return (
           <li>
             <article>
-              <div class="main">
-                <h3>
-                  <a href={url} target="_blank" rel="noopener noreferrer">
-                    {institution}
-                  </a>
-                </h3>
+              <div class="info">
+                <h3><a href={url} target="_blank" rel="noopener">{institution}</a></h3>
                 <h4>{studyType}{area ? ` · ${area}` : ""}</h4>
               </div>
-              <date>{Years}</date>
+              <date>{range}</date>
             </article>
           </li>
         );
@@ -31,15 +27,9 @@ import { education } from "@/cv.json";
 </Section>
 
 <style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+  ul { display: flex; flex-direction: column; gap: 0; }
 
-  li + li {
-    border-top: 1px solid var(--border);
-  }
+  li + li { border-top: 1px solid var(--border); }
 
   article {
     display: flex;
@@ -49,34 +39,32 @@ import { education } from "@/cv.json";
     padding: 0.75rem 0;
   }
 
-  li:first-child article {
-    padding-top: 0;
-  }
+  li:first-child article { padding-top: 0; }
 
-  .main {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+  .info { display: flex; flex-direction: column; gap: 2px; }
 
   h3 {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: var(--ink);
   }
 
   h3 a {
     color: var(--ink);
-    transition: color 0.15s ease-out;
+    transition: color 0.15s;
   }
 
-  h3 a:hover {
-    color: var(--accent);
-  }
+  h3 a:hover { color: var(--accent-hi); }
 
   h4 {
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--ink-secondary);
+    color: var(--ink-2);
+  }
+
+  @media print {
+    h3 a { color: #0a0b0f; }
+    li + li { border-color: rgba(10,11,15,0.1); }
   }
 </style>

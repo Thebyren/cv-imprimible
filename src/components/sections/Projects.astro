@@ -3,35 +3,29 @@ import Section from "components/section.astro";
 import { projects } from "@/cv.json";
 ---
 
-<Section title="Projects">
+<Section title="Proyectos">
   <ul>
     {
-      projects.map(({ name, description, highlights, active, url }) => {
-        return (
-          <li>
-            <article>
-              <header>
-                <div class="title-row">
-                  <h3>
-                    <a href={url} title={`Ver proyecto ${name}`} target="_blank">
-                      {name}
-                    </a>
-                  </h3>
-                  <span class={`status ${active ? "active" : "inactive"}`}>
-                    {active ? "activo" : "archivado"}
-                  </span>
-                </div>
-                <p>{description}</p>
-              </header>
-              <footer>
-                {highlights.map((highlight) => (
-                  <span class="tag">{highlight}</span>
-                ))}
-              </footer>
-            </article>
-          </li>
-        );
-      })
+      projects.map(({ name, description, highlights, active, url }) => (
+        <li>
+          <article>
+            <header>
+              <div class="title-row">
+                <h3>
+                  <a href={url} target="_blank" rel="noopener">{name}</a>
+                </h3>
+                <span class={`badge ${active ? "active" : "archived"}`}>
+                  {active ? "activo" : "archivado"}
+                </span>
+              </div>
+              <p>{description}</p>
+            </header>
+            <footer>
+              {highlights.map(h => <span class="tag">{h}</span>)}
+            </footer>
+          </article>
+        </li>
+      ))
     }
   </ul>
 </Section>
@@ -45,26 +39,23 @@ import { projects } from "@/cv.json";
 
   article {
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-top: 2px solid var(--border-2);
+    border-radius: var(--r);
     padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     height: 100%;
-    transition: border-color 0.15s ease-out, background 0.15s ease-out;
+    background: var(--bg-elevated);
+    transition: border-top-color 0.15s, background 0.15s;
   }
 
   article:hover {
-    border-color: var(--accent);
-    background: var(--accent-subtle);
+    border-top-color: var(--accent);
+    background: rgba(43,92,255,0.05);
   }
 
-  header {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+  header { flex: 1; display: flex; flex-direction: column; gap: 6px; }
 
   .title-row {
     display: flex;
@@ -74,59 +65,58 @@ import { projects } from "@/cv.json";
   }
 
   h3 {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
 
   h3 a {
     color: var(--ink);
-    transition: color 0.15s ease-out;
+    transition: color 0.15s;
   }
 
-  h3 a:hover {
-    color: var(--accent);
-  }
+  h3 a:hover { color: var(--accent-hi); }
 
-  .status {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    font-weight: 600;
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 2px 6px;
-    border-radius: var(--radius);
+    padding: 2px 7px;
+    border-radius: var(--r);
     flex-shrink: 0;
   }
 
   .active {
-    color: var(--status-ok);
-    background: rgba(31, 163, 92, 0.1);
-    border: 1px solid rgba(31, 163, 92, 0.25);
+    color: var(--ok);
+    background: var(--ok-sub);
+    border: 1px solid rgba(31,163,92,0.25);
   }
 
-  .inactive {
-    color: var(--ink-tertiary);
-    background: var(--bg);
-    border: 1px solid var(--border);
+  .archived {
+    color: var(--ink-3);
+    background: transparent;
+    border: 1px solid var(--border-2);
   }
 
-  footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
+  footer { display: flex; flex-wrap: wrap; gap: 4px; }
 
   .tag {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-family: var(--mono);
+    font-size: 0.6rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
-    background: var(--bg);
-    color: var(--ink-tertiary);
-    border: 1px solid var(--border);
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    border: 1px solid var(--border-2);
     padding: 2px 8px;
-    border-radius: var(--radius);
+    border-radius: var(--r);
+  }
+
+  @media print {
+    article { background: #fff; border-color: rgba(10,11,15,0.12); border-top-color: rgba(10,11,15,0.2); }
+    .active { color: #157a44; background: rgba(21,122,68,0.07); }
+    .tag { color: #7a8090; border-color: rgba(10,11,15,0.18); }
   }
 </style>

@@ -3,46 +3,49 @@ import Section from "components/section.astro";
 import { skills } from "@/cv.json";
 ---
 
-<Section title="Skills">
+<Section title="Stack Técnico">
   <ul>
-    {
-      skills.map(({ name }) => {
-        return (
-          <li>
-            <span>{name}</span>
-          </li>
-        );
-      })
-    }
+    {skills.map(({ name }) => (
+      <li><span>{name}</span></li>
+    ))}
   </ul>
 </Section>
 
 <style>
   ul {
-    display: inline-flex;
-    gap: 6px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 6px;
   }
 
-  li span {
+  span {
     display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--ink-secondary);
-    background: var(--bg);
-    border: 1px solid var(--border-hard);
-    padding: 3px 10px;
-    border-radius: var(--radius);
-    transition: all 0.15s ease-out;
+    color: var(--ink-2);
+    border: 1px solid var(--border-2);
+    padding: 4px 12px;
+    border-radius: var(--r);
+    background: var(--bg-elevated);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
     user-select: none;
+    cursor: default;
   }
 
-  li span:hover {
+  span:hover {
     border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-subtle);
+    color: var(--accent-hi);
+    background: var(--accent-sub);
+  }
+
+  @media print {
+    span {
+      color: #4a4f60;
+      border-color: rgba(10,11,15,0.2);
+      background: #fff;
+    }
   }
 </style>
