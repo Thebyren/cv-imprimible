@@ -8,116 +8,99 @@ import Github from "@/icons/Github.astro";
 import WorlMap from "@/icons/WorlMap.astro";
 import type { SocialIcon } from "@/types";
 
-const { name, label, image, location, profiles, phone, email, summary } = basics;
+const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
 const linkedin = profiles.find(({network}) => network === "Linkedin");
-
 const ICONS: SocialIcon = { Github, Linkedin, X };
-
 const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
 ---
 
 <section class="hero">
 
-  <!-- dot-grid decorativo (solo web) -->
-  <div class="grid-overlay" aria-hidden="true"></div>
-
   <div class="hero-inner">
 
-    <!-- columna izquierda -->
-    <div class="left">
-      <p class="kicker">
-        <WorlMap/> {city}, {region}
-      </p>
+    <!-- kicker full-width -->
+    <p class="kicker">
+      <WorlMap/> {city}, {region}
+    </p>
 
-      <h1>{name.split(" ").slice(0,2).join(" ")}<br/><span class="name-last">{name.split(" ").slice(2).join(" ")}</span></h1>
-
-      <p class="label-line">{label}</p>
-
-      <!-- log card tipo nio.gt (solo web) -->
-      <div class="log-card non-print" aria-label="Resumen técnico">
-        <span class="log-title">perfil.log</span>
-        <ul class="log-lines">
-          <li><span class="ln">01</span><span class="lk">experiencia Odoo</span><span class="dots"></span><span class="lv ok">2+ años</span></li>
-          <li><span class="ln">02</span><span class="lk">clientes atendidos</span><span class="dots"></span><span class="lv ok">+20</span></li>
-          <li><span class="ln">03</span><span class="lk">proyectos activos</span><span class="dots"></span><span class="lv ok">3</span></li>
-          <li><span class="ln">04</span><span class="lk">localización fiscal</span><span class="dots"></span><span class="lv ok">FEL/DTE ✓</span></li>
-          <li><span class="ln">05</span><span class="lk">infraestructura</span><span class="dots"></span><span class="lv">Docker / Caddy</span></li>
-        </ul>
+    <!-- row nombre ↔ foto -->
+    <div class="name-row">
+      <div class="left">
+        <h1>
+          {name.split(" ").slice(0,2).join(" ")}<br/>
+          <span class="name-last">{name.split(" ").slice(2).join(" ")}</span>
+        </h1>
+        <p class="label-line">{label}</p>
+        <p class="print-info print">{printInfo}</p>
+        <footer class="contacts non-print">
+          {email && (
+            <a href={`mailto:${email}`} class="contact-chip">
+              <Mail/> <span>{email}</span>
+            </a>
+          )}
+          {phone && (
+            <a href={`tel:+${phone}`} class="contact-chip">
+              <Phone/> <span>{phone}</span>
+            </a>
+          )}
+          {profiles.map(({ network, url }) => {
+            const Icon = ICONS[network];
+            return (
+              <a href={url} class="icon-chip" target="_blank" rel="noopener" title={network}>
+                <Icon/>
+              </a>
+            );
+          })}
+        </footer>
       </div>
 
-      <!-- print info -->
-      <p class="print-info print">{printInfo}</p>
-
-      <!-- contacto web -->
-      <footer class="contacts non-print">
-        {email && (
-          <a href={`mailto:${email}`} class="contact-chip" title={`Correo: ${email}`}>
-            <Mail/> <span>{email}</span>
-          </a>
-        )}
-        {phone && (
-          <a href={`tel:+${phone}`} class="contact-chip" title={`Teléfono: ${phone}`}>
-            <Phone/> <span>{phone}</span>
-          </a>
-        )}
-        {profiles.map(({ network, url }) => {
-          const Icon = ICONS[network];
-          return (
-            <a href={url} class="icon-chip" title={network} target="_blank" rel="noopener">
-              <Icon/>
-            </a>
-          );
-        })}
-      </footer>
+      <div class="right">
+        <div class="photo-frame">
+          <img src={image} alt={name} />
+          <span class="photo-label">BPF-01</span>
+        </div>
+      </div>
     </div>
 
-    <!-- columna derecha: foto -->
-    <div class="right">
-      <div class="photo-frame">
-        <img src={image} alt={name} />
-        <span class="photo-label">BPF-01</span>
-      </div>
+    <!-- log card full-width (debajo de nombre+foto) -->
+    <div class="log-card non-print">
+      <span class="log-title">perfil.log</span>
+      <ul class="log-lines">
+        <li><span class="ln">01</span><span class="lk">experiencia Odoo</span><span class="dots"></span><span class="lv ok">2+ años</span></li>
+        <li><span class="ln">02</span><span class="lk">clientes atendidos</span><span class="dots"></span><span class="lv ok">+20</span></li>
+        <li><span class="ln">03</span><span class="lk">proyectos activos</span><span class="dots"></span><span class="lv ok">3</span></li>
+        <li><span class="ln">04</span><span class="lk">localización fiscal</span><span class="dots"></span><span class="lv ok">FEL/DTE ✓</span></li>
+        <li><span class="ln">05</span><span class="lk">infraestructura</span><span class="dots"></span><span class="lv">Docker / Caddy</span></li>
+      </ul>
     </div>
 
   </div>
 </section>
 
 <style>
-
-  /* ── contenedor ──────────────────────────────────── */
   .hero {
     position: relative;
     max-width: 740px;
     margin: 0 auto 20px;
     border: 1px solid var(--border);
     border-radius: var(--r);
-    overflow: hidden;
-    background: var(--bg-card);
-  }
-
-  /* dot-grid sutil */
-  .grid-overlay {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(43,92,255,0.1) 1px, transparent 1px);
+    background-color: rgba(14,16,24,0.88);
+    background-image: radial-gradient(circle, rgba(43,92,255,0.18) 1px, transparent 1px);
     background-size: 22px 22px;
-    pointer-events: none;
+    backdrop-filter: blur(2px);
   }
 
   .hero-inner {
     position: relative;
     z-index: 1;
     display: flex;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
     padding: 2rem 2rem 1.75rem;
   }
 
-  /* ── izquierda ───────────────────────────────────── */
-  .left { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
-
+  /* kicker */
   .kicker {
     font-family: var(--mono);
     font-size: 0.62rem;
@@ -131,18 +114,32 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     margin: 0;
   }
 
+  /* row nombre ↔ foto */
+  .name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
   h1 {
     font-size: 2.8rem;
     font-weight: 900;
     line-height: 1.0;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.01em;
     color: var(--ink);
     text-wrap: balance;
+    margin: 0;
   }
 
-  .name-last {
-    color: var(--accent-hi);
-  }
+  .name-last { color: var(--accent-hi); }
 
   .label-line {
     font-size: 0.85rem;
@@ -153,72 +150,7 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     line-height: 1.4;
   }
 
-  /* ── log card ────────────────────────────────────── */
-  .log-card {
-    border: 1px solid var(--border-2);
-    border-radius: var(--r);
-    padding: 0.75rem 1rem;
-    background: rgba(8,9,13,0.6);
-  }
-
-  .log-title {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    display: block;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .log-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .log-lines li {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    white-space: nowrap;
-  }
-
-  .ln {
-    color: var(--ink-3);
-    font-size: 0.6rem;
-    min-width: 16px;
-  }
-
-  .lk {
-    color: var(--ink-2);
-    font-size: 0.72rem;
-  }
-
-  .dots {
-    flex: 1;
-    height: 1px;
-    border-bottom: 1px dotted var(--ink-3);
-    margin: 0 4px;
-    min-width: 16px;
-    align-self: center;
-    opacity: 0.4;
-  }
-
-  .lv {
-    color: var(--ink);
-    font-weight: 600;
-    font-size: 0.72rem;
-  }
-
-  .lv.ok { color: var(--ok); }
-
-  /* ── contacto ────────────────────────────────────── */
+  /* contacto */
   .contacts {
     display: flex;
     flex-wrap: wrap;
@@ -235,7 +167,7 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     border: 1px solid var(--border-2);
     padding: 4px 10px;
     border-radius: var(--r);
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    transition: border-color .15s, color .15s, background .15s;
   }
 
   .contact-chip:hover {
@@ -253,7 +185,7 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     color: var(--ink-3);
     border: 1px solid var(--border-2);
     border-radius: var(--r);
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    transition: border-color .15s, color .15s, background .15s;
   }
 
   .icon-chip:hover {
@@ -262,7 +194,7 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     background: var(--accent-sub);
   }
 
-  /* ── foto ────────────────────────────────────────── */
+  /* foto */
   .right { flex-shrink: 0; }
 
   .photo-frame {
@@ -296,32 +228,103 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
     white-space: nowrap;
   }
 
-  /* ── print info ──────────────────────────────────── */
+  /* ── perfil.log full-width ───────────────────────── */
+  .log-card {
+    border: 1px solid var(--border-2);
+    border-radius: var(--r);
+    padding: 1rem 1.1rem;
+    background: rgba(8,9,13,0.65);
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .log-title {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 0.55rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .log-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .log-lines li {
+    display: flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.71rem;
+    line-height: 1;
+  }
+
+  .ln {
+    color: var(--ink-3);
+    font-size: 0.58rem;
+    min-width: 20px;
+    flex-shrink: 0;
+  }
+
+  .lk {
+    color: var(--ink-2);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .dots {
+    flex: 1;
+    height: 1px;
+    margin: 0 8px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--ink-3) 0px,
+      var(--ink-3) 2px,
+      transparent 2px,
+      transparent 7px
+    );
+    opacity: 0.3;
+    min-width: 20px;
+  }
+
+  .lv {
+    color: var(--ink);
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .lv.ok { color: var(--ok); }
+
+  /* print info */
   .print-info {
     font-family: var(--mono);
     font-size: 0.7rem;
     color: var(--ink-2);
     letter-spacing: 0.02em;
-    display: none;
   }
 
   .non-print { display: flex; }
   .print     { display: none; }
 
+  /* ── print ───────────────────────────────────────── */
   @media print {
-    .hero {
-      background: #fff;
-      border: 1px solid rgba(10,11,15,0.15);
-    }
-    .grid-overlay { display: none; }
-    .hero-inner   { padding: 1rem 1.2rem; }
-    h1 { font-size: 1.7rem; color: #0a0b0f; }
-    .name-last { color: #1a3ecc; }
-    .label-line { color: #4a4f60; }
-    .non-print { display: none !important; }
-    .print     { display: block !important; }
-    img { filter: none; width: 80px; border-color: rgba(10,11,15,0.3); }
-    .photo-label { display: none; }
-    .kicker { color: #7a8090; }
+    .hero         { background-color: #fff; background-image: none; border: 1px solid rgba(10,11,15,0.15); backdrop-filter: none; }
+    #dot-canvas   { display: none; }
+    .hero-inner   { padding: 1rem 1.2rem; gap: 0.5rem; }
+    h1            { font-size: 1.6rem; color: #0a0b0f; }
+    .name-last    { color: #1a3ecc; }
+    .label-line   { color: #4a4f60; }
+    .kicker       { color: #7a8090; }
+    .non-print    { display: none !important; }
+    .print        { display: block !important; }
+    img           { filter: none; width: 80px; border-color: rgba(10,11,15,0.3); }
+    .photo-label  { display: none; }
   }
 </style>

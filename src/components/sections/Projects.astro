@@ -38,6 +38,8 @@ import { projects } from "@/cv.json";
   }
 
   article {
+    position: relative;
+    overflow: hidden;
     border: 1px solid var(--border);
     border-top: 2px solid var(--border-2);
     border-radius: var(--r);
@@ -47,13 +49,36 @@ import { projects } from "@/cv.json";
     gap: 10px;
     height: 100%;
     background: var(--bg-elevated);
-    transition: border-top-color 0.15s, background 0.15s;
+    transition: border-top-color 0.2s ease-in;
+  }
+
+  /* barra que se expande hacia abajo */
+  article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(43, 92, 255, 0.18) 0%,
+      rgba(43, 92, 255, 0.06) 100%
+    );
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.38s ease-in;
+    pointer-events: none;
+    z-index: 0;
   }
 
   article:hover {
     border-top-color: var(--accent);
-    background: rgba(43,92,255,0.05);
   }
+
+  article:hover::before {
+    transform: scaleY(1);
+  }
+
+  /* contenido sobre el ::before */
+  article > * { position: relative; z-index: 1; }
 
   header { flex: 1; display: flex; flex-direction: column; gap: 6px; }
 
