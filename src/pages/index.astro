@@ -13,29 +13,35 @@ const {name, label} = basics
 ---
 
 <Layout title=`portafolio de ${name} - ${label}`>
-
-	<Hero/>
-	<Experience/>
-	<Projects/>
-	<About/>
-	<Skills/>
-	<Education/>
-	<div>
-		<Link/>
-	</div>
-	<KeyboardManagerfrom/>
+  <main>
+    <Hero/>
+    <Experience/>
+    <Projects/>
+    <About/>
+    <Skills/>
+    <Education/>
+    <div class="print-link">
+      <Link/>
+    </div>
+  </main>
+  <KeyboardManagerfrom/>
 </Layout>
 
 <style>
-	html{
-		padding:20px;
-	}
-	div{
-		display: none;
-	}
-	@media print{
-		div{
-			display: block;
-		}
-	}
+  main {
+    padding: 24px 16px 40px;
+  }
+
+  .print-link {
+    display: none;
+  }
+
+  @media print {
+    main {
+      padding: 12px 8px 0;
+    }
+    .print-link {
+      display: block;
+    }
+  }
 </style>

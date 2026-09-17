@@ -2,26 +2,42 @@
 import Section from "components/section.astro";
 ---
 
-<Section >
-    <div class="container">
-        
-        <div>
-            <p>para ver este sitio en produccion visita</p>
-            <p>https://main--lighthearted-pithivier-f103e3.netlify.app/</p>
-        </div>
-        <img src="./qr-code.png" alt="imagen qr que te envia a https://main--lighthearted-pithivier-f103e3.netlify.app/">
+<Section>
+  <div class="container">
+    <div>
+      <p class="label">versión en línea</p>
+      <p class="url">https://main--lighthearted-pithivier-f103e3.netlify.app/</p>
     </div>
+    <img src="./qr-code.png" alt="QR — acceso al CV en línea" />
+  </div>
 </Section>
-<style>
-    img{
-        width: 9rem;
-        height: auto;
-    }
-    .container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-</style>
 
+<style>
+  img {
+    width: 80px;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-tertiary);
+    margin-bottom: 4px;
+  }
+  .url {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+</style>

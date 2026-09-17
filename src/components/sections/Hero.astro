@@ -18,33 +18,37 @@ const SOCIAL_ICONS: SocialIcon = {
   X,
 };
 
-const printInfo = [Linkedininfo?.url, email, phone, ].filter(Boolean).join("\n ")
+const printInfo = [Linkedininfo?.url, email, phone].filter(Boolean).join("  ·  ")
 ---
 
 <Section>
   <div class="container">
     <div class="info">
+      <div class="meta">
+        <span class="meta-tag">
+          <WorlMap/>
+          {city}, {region}
+        </span>
+      </div>
       <h1>{name}</h1>
       <h2>{label}</h2>
-      <span>
-        <p>
-          <WorlMap/>
-        </p>
-        {city}, {region}
-      </span>
-      <div class="print" style="white-space: pre-line">
+
+      <div class="print-info">
         <p>{printInfo}</p>
       </div>
+
       <footer class="non-print">
         {
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electronico a ${name} al correo ${email}`}
+              title={`Enviar correo a ${name}`}
               target="_blank"
               rel="noopener noreferrer"
+              class="contact-link"
             >
               <Mail />
+              <span>{email}</span>
             </a>
           )
         }
@@ -52,11 +56,13 @@ const printInfo = [Linkedininfo?.url, email, phone, ].filter(Boolean).join("\n "
           phone && (
             <a
               href={`tel:+${phone}`}
-              title={`realizar una llamada a ${name} a su numero ${phone}`}
+              title={`Llamar a ${name}`}
               target="_blank"
               rel="noopener noreferrer"
+              class="contact-link"
             >
               <Phone />
+              <span>{phone}</span>
             </a>
           )
         }
@@ -66,9 +72,10 @@ const printInfo = [Linkedininfo?.url, email, phone, ].filter(Boolean).join("\n "
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={`Perfil de ${name} en ${network}`}
                 target="_blank"
-                rel="nooponer noreferrer"
+                rel="noopener noreferrer"
+                class="icon-link"
               >
                 <Icon_ />
               </a>
@@ -84,83 +91,130 @@ const printInfo = [Linkedininfo?.url, email, phone, ].filter(Boolean).join("\n "
 </Section>
 
 <style>
-  .info{
-    display:flex;
-    flex-direction:column;
-    gap:0.5rem;
-    padding-right:32px;
-  }
   .container {
-    padding-inline:20px;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+  }
+
+  .meta {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
   }
+
+  .meta-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
   }
+
   h2 {
-    text-wrap: balance;
-    color: #446;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    letter-spacing: -0.01em;
   }
-  span {
-    color: #557;
-    display:flex;
-    align-items:center;
-    gap:0.25rem;
-    font-size:0.85rem;
-    letter-spacing: -0.05rem;
+
+  figure {
+    flex-shrink: 0;
   }
+
   img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 100px;
-    border-radius: 7px;
-    border: #aaf solid 3px;
-  }
-  footer {
-    display:flex;
-    gap:4px;
-    margin-top;8px;
-  }
-  footer a{
-    margin:4px;
-    color:#888;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border: 1px solid #999;
-    padding: 4px;
-    height:32px;
-    width:32px;
-    border-radius: 6px;
-    transition:all 0.3s ease;
-  }
-  footer a:hover{
-      background-color: #bcf;
-    }
-  .non-print{
-    display:flex;
-  }
-  .print{
-    display:none;
-    font-size:0.8rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 90px;
+    border-radius: var(--radius);
+    border: 2px solid var(--accent);
   }
 
-  @media print{
-    .non-print{
-      display:none;
-    }
-    .print{
-      display:flex;
-    }
-    img{
-      width: 120px;
-    }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-secondary);
+    border: 1px solid var(--border-hard);
+    padding: 4px 10px;
+    border-radius: var(--radius);
+    transition: all 0.15s ease-out;
+    letter-spacing: 0.01em;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
+  }
+
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-tertiary);
+    border: 1px solid var(--border-hard);
+    padding: 4px;
+    height: 28px;
+    width: 28px;
+    border-radius: var(--radius);
+    transition: all 0.15s ease-out;
+  }
+
+  .icon-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
+  }
+
+  .print-info {
+    display: none;
+    margin-top: 0.3rem;
+  }
+
+  .print-info p {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-secondary);
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    .non-print { display: none; }
+    .print-info { display: block; }
+    img { width: 80px; border: 1px solid var(--border-hard); }
+    h1 { font-size: 1.6rem; }
   }
 </style>

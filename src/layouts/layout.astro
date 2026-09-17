@@ -10,6 +10,9 @@ const { title } = Astro.props
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>{ title }</title>
   </head>
   <body>
@@ -17,61 +20,99 @@ const { title } = Astro.props
   </body>
 </html>
 
-
-
 <style is:global>
 
-  html{
-    font-family: Menlo, Monaco, Lucia Console, 'Courier New', Courier, monospace;
-    background: #fff;
-    letter-spacing: -0.025rem;
+  :root {
+    --bg: #f4f5f7;
+    --bg-elevated: #ffffff;
+    --ink: #0a0b0f;
+    --ink-secondary: #4a4f60;
+    --ink-tertiary: #7a8090;
+    --accent: #2b5cff;
+    --accent-subtle: rgba(43, 92, 255, 0.08);
+    --border: rgba(10, 11, 15, 0.12);
+    --border-hard: rgba(10, 11, 15, 0.22);
+    --status-ok: #1fa35c;
+    --amber: #c8a832;
+    --font-sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", monospace;
+    --radius: 2px;
   }
-  
-  *::selection{
-    color:#aad;
-    background:#337;
+
+  html {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--ink);
+    letter-spacing: -0.015rem;
   }
-  date{
-    background:#bbf;
-    border-radius:10px; 
-    padding-inline: 6px;
+
+  *::selection {
+    background: var(--accent);
+    color: #fff;
   }
-  
-  body, figure{
-    margin:0;
-    padding:0;
+
+  body, figure {
+    margin: 0;
+    padding: 0;
   }
-  
-  a{
+
+  a {
     text-decoration: none;
+    color: var(--accent);
   }
-  ul{
-    list-style:none;
-    margin:0;
-    padding:0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
-  *, *::before, *::after{
-    box-sizing:border-box;
+
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
-  h1,h2,h3,h4{
-    margin:0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+
+  h1, h2, h3, h4 {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--ink);
   }
-  
-  p{
-    color:#556;
-    font-size:0.85rem;
-    line-height: 1.5;
-    margin:0;
+
+  p {
+    color: var(--ink-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
     text-wrap: pretty;
-  
   }
-  
-  @media print{
-    a{
-      text-decoration: none;
-      color:#444;
+
+  date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: var(--accent-subtle);
+    padding: 2px 8px;
+    border-radius: var(--radius);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  @media print {
+    :root {
+      --bg: #fff;
+      --bg-elevated: #fff;
+    }
+    html {
+      background: #fff;
+    }
+    a {
+      color: var(--ink-secondary);
+    }
+    date {
+      background: none;
+      color: var(--ink-tertiary);
+      border: 1px solid var(--border-hard);
     }
   }
-  </style>
+
+</style>

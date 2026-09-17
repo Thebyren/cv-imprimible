@@ -16,24 +16,33 @@ import { skills } from "@/cv.json";
     }
   </ul>
 </Section>
+
 <style>
   ul {
-    padding-inline: 20px;
     display: inline-flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
   }
-  li {
-    border-radius: 3px;
-    background: #ccd;
-    color: #000;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.2rem 0.6rem;
+
+  li span {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border-hard);
+    padding: 3px 10px;
+    border-radius: var(--radius);
+    transition: all 0.15s ease-out;
     user-select: none;
-    transition:all 0.3s ease;
   }
-  li:hover {
-    background: #aad;
+
+  li span:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
   }
 </style>

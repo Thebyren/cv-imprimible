@@ -8,30 +8,25 @@ import { work } from "@/cv.json";
     {
       work.map(({ name, position, url, startDate, endDate, summary }) => {
         const StartYear = new Date(startDate+'T00:00:01Z').getFullYear();
-        const EndYear = endDate !== null ? new Date(endDate+'T00:00:01Z').getFullYear() : "actualmente";
-        const Years = `${StartYear} - ${EndYear}`;
-        
+        const EndYear = endDate !== null ? new Date(endDate+'T00:00:01Z').getFullYear() : "presente";
+        const Years = `${StartYear} — ${EndYear}`;
+
         return (
           <li>
             <article>
               <header>
-                <div>
+                <div class="title-block">
                   <h3>{name}</h3>
                   <h4>{position}</h4>
-                  </div>
-                  <date>{Years}</date>
+                </div>
+                <date>{Years}</date>
               </header>
-              
-              <footer>
-                <p>
-                  {summary}
-                  {url && (
-                    <>
-                      , <a href={url} target="_blank">conocer más.</a>
-                    </>
-                  )}
-                </p>
-              </footer>
+              <p>
+                {summary}
+                {url && (
+                  <> · <a href={url} target="_blank">ver más →</a></>
+                )}
+              </p>
             </article>
           </li>
         );
@@ -40,30 +35,70 @@ import { work } from "@/cv.json";
   </ul>
 </Section>
 
-
 <style>
-  ul{
-    display:flex;
-    flex-direction:column;
-    gap:32px;
-    padding-inline:20px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
- 
-  article h3{
-    color:#333;
+
+  li + li {
+    border-top: 1px solid var(--border);
   }
-  article h4{
-    color:#444;
-    font-weight: 400;
+
+  article {
+    padding: 1rem 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border);
+    margin-left: 0.25rem;
+    transition: border-color 0.15s ease-out;
   }
-  header{
-    display:flex;
+
+  article:hover {
+    border-left-color: var(--accent);
+  }
+
+  li:first-child article {
+    padding-top: 0;
+  }
+
+  header {
+    display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 4px;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
   }
-  date{
-    color:#226;
-    font-size: 0.9rem;
+
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    margin-top: 1px;
+  }
+
+  a {
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media print {
+    article {
+      padding: 0.7rem 0 0.7rem 0.75rem;
+    }
+    li:first-child article {
+      padding-top: 0;
+    }
   }
 </style>
