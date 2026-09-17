@@ -213,6 +213,7 @@ const {name, label} = basics
   /* ── print ───────────────────────────────────────── */
   @media print {
     .chrome, .sidebar { display: none; }
+    :global(#bg-canvas) { display: none !important; }
     main {
       margin: 0;
       padding: 10px 8px 0;

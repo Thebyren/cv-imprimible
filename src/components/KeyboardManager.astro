@@ -114,60 +114,79 @@ data-info={JSON.stringify(profilesInfo)}
 </script>
 
 <style>
-  @keyframes fadeIn {
-    from {
-      opacity:0;
-    }
-    to{
-      opacity:1;
-    }
+  /* ── ninja-keys dark theme ───────────────────────── */
+  ninja-keys {
+    --ninja-overflow-background: rgba(8,9,13,0.72);
+    --ninja-modal-background: #0e1018;
+    --ninja-modal-border: 1px solid rgba(238,240,246,0.13);
+    --ninja-modal-shadow: 0 24px 64px rgba(0,0,0,0.7);
+    --ninja-text-color: #eef0f6;
+    --ninja-placeholder-color: #444c6e;
+    --ninja-icon-color: #9aa0bc;
+    --ninja-selected-background: rgba(43,92,255,0.14);
+    --ninja-kbd-background: rgba(238,240,246,0.07);
+    --ninja-kbd-color: #9aa0bc;
+    --ninja-group-text-color: #444c6e;
+    --ninja-footer-background: rgba(8,9,13,0.6);
+    --ninja-backdrop-filter: blur(8px);
+    --ninja-key-border-radius: 2px;
   }
-  footer{
-    position:fixed; 
-    bottom:0;
-    left:0;
-    text-align:center;
-    width:100%;
-    background:#fdfdfd;
-    padding-block: 8px;
-    border-top: 2px solid #bbb;
-    
+
+  /* ── hint bar ────────────────────────────────────── */
+  @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+
+  footer {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    padding-block: 7px;
+    background: rgba(8,9,13,0.88);
+    border-top: 1px solid rgba(238,240,246,0.08);
+    backdrop-filter: blur(6px);
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444c6e;
+    z-index: 10;
     view-timeline-name: --revealing;
     view-timeline-axis: block;
-    animation:ease-in-out 0.7s fadeIn;
+    animation: fadeIn 0.7s ease-in-out;
     animation-timeline: --revealing;
     animation-range: entry 100% cover 10%;
   }
-  kbd{
-    background: #aac;
-    padding-inline:4px;
-    border-radius: 5px;
-    font-size: 0.85rem;
+
+  kbd {
+    background: rgba(43,92,255,0.15);
+    color: #9aa0bc;
+    border: 1px solid rgba(43,92,255,0.35);
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-family: inherit;
   }
-  button{
-    display:none;
-    background:#fdfdfd;
-    border:2px solid #bbb; 
-    width:100%;
-    font-size:1.3rem;
+
+  /* ── print button (mobile) ───────────────────────── */
+  button {
+    display: none;
+    background: #0e1018;
+    border: 1px solid rgba(238,240,246,0.13);
+    color: #eef0f6;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.6rem;
+    cursor: pointer;
   }
-  button:hover{
-    background: #aac;
+  button:hover { background: rgba(43,92,255,0.14); }
+
+  @media print {
+    ninja-keys, footer { display: none; }
   }
-  @media print{
-    ninja-keys{
-      display: none;
-    }
-    footer{
-      display:none;
-    }
-  }
-  @media only screen and (max-width:600px){
-    footer{
-      display:none;
-    }
-    button{
-      display:block;
-    }
+
+  @media only screen and (max-width: 600px) {
+    footer  { display: none; }
+    button  { display: block; }
   }
 </style>

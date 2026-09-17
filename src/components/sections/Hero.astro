@@ -35,13 +35,13 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
         <p class="print-info print">{printInfo}</p>
         <footer class="contacts non-print">
           {email && (
-            <a href={`mailto:${email}`} class="contact-chip">
-              <Mail/> <span>{email}</span>
+            <a href={`mailto:${email}`} class="icon-chip" title={email} aria-label={`Email: ${email}`}>
+              <Mail/>
             </a>
           )}
           {phone && (
-            <a href={`tel:+${phone}`} class="contact-chip">
-              <Phone/> <span>{phone}</span>
+            <a href={`tel:+${phone}`} class="icon-chip" title={phone} aria-label={`Teléfono: ${phone}`}>
+              <Phone/>
             </a>
           )}
           {profiles.map(({ network, url }) => {
@@ -204,8 +204,8 @@ const printInfo = [linkedin?.url, email, phone].filter(Boolean).join("  ·  ");
 
   img {
     display: block;
-    width: 96px;
-    aspect-ratio: 1;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
     border-radius: var(--r);
     border: 2px solid var(--accent);
